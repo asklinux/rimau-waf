@@ -1,0 +1,38 @@
+<?php
+/**
+ * Author: bedirhan
+ * 
+ * This class represents an enumeration of http method values 
+ */
+    class HttpMethod{
+        
+        const UNDEFINED   = 0;
+        
+        // safe methods
+        const GET         = 1;
+        const OPTIONS     = 2;
+        const HEAD        = 3;
+        const TRACE       = 4;
+        const TRACK       = 5; // non standard
+        
+        // unsafe methods
+        const POST        = 6;
+        const PUT         = 7;
+        const DELETE      = 8;
+        
+        // thru method
+        const CONNECT     = 9;
+        
+        // webdav extensions
+        const PROPFIND    = 10;
+        const PROPPATCH   = 11;
+        const MKCOL       = 12;
+        const COPY        = 13;
+        const MOVE        = 14;
+        const LOCK        = 15;
+        const UNLOCK      = 16;
+        
+        // ...
+    }    
+
+?>
