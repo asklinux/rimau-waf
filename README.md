@@ -16,6 +16,35 @@ This project is developed for public waf web interface, the original source code
 
 currently only supports the installation of systems that use centos7. Pakage RPM can be uploaded to the installation process
 
+**Manual Installation**
+
+#yum install nginx
+#yum install php php-fpm
+#yum install sqlite
+#yum install httpd
+#yum install mod_security
+
+git clone https://github.com/asklinux/rimau-waf.git
+
+mv rimau-waf /usr/share/rimauwaf
+
+cd /usr/share/rimauwaf
+
+mv source web
+
+echo "Defaults:php-fpm !requiretty" >> /etc/sudoers
+echo "User_Alias WWW_USER2 = php-fpm" >> /etc/sudoers
+echo "Cmnd_Alias WWW_COMMANDS2 = /usr/bin/systemctl,/usr/bin/ln,/usr/bin/unlink,/usr/share/rimauwaf/run.sh,/usr/bin/tail,/usr/bin/sed,/usr/bin/cat,/usr/bin/grep,/usr/sbin/apachectl" >> /etc/sudoers
+echo "WWW_USER2 localhost = (ALL) NOPASSWD:WWW_COMMANDS2" >> /etc/sudoers
+
+semanage permissive -a httpd_t
+
+vi /etc/nginx/nginx.conf
+
+change port and folder to /usr/share/rimauwaf
+
+
+#systemctl enable nginx
 
 ## Tests
 
