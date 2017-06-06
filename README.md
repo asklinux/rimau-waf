@@ -32,9 +32,12 @@ cd /usr/share/rimauwaf
 
 mv source web
 
-echo "Defaults:php-fpm !requiretty" >> /etc/sudoers
+echo 'Defaults:php-fpm !requiretty' >> /etc/sudoers
+
 echo "User_Alias WWW_USER2 = php-fpm" >> /etc/sudoers
+
 echo "Cmnd_Alias WWW_COMMANDS2 = /usr/bin/systemctl,/usr/bin/ln,/usr/bin/unlink,/usr/share/rimauwaf/run.sh,/usr/bin/tail,/usr/bin/sed,/usr/bin/cat,/usr/bin/grep,/usr/sbin/apachectl" >> /etc/sudoers
+
 echo "WWW_USER2 localhost = (ALL) NOPASSWD:WWW_COMMANDS2" >> /etc/sudoers
 
 semanage permissive -a httpd_t
