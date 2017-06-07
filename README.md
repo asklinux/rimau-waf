@@ -1,20 +1,20 @@
 ## Rimau Waf 1.0 Beta Version 
 
-This project develops web user interface for WAF system using **ModSecurity** , apache and nginx 
+The purpose of this project is to develops a user interface for **ModSecurity**. Currently this project using Apache and Nginx as a backbone. 
 
 ![Screenshot](docs/img/login.png)
 
 ![Screenshot](docs/img/panel.png)
 
 ## Code development
-These systems have been developed using **codeigniter** and sqlite php framwork for the interfaces also use bootstrap
+These systems has been developed using **Codeigniter Framework** as well as SQLite as a database. **Bootstrap** has been choose to make the interface intuitive and responsive design.
 ## Motivation
 
-This project is developed for public waf web interface, the original source code has been changed to support the development of open source frameworks used in the development process. It is open source code to comply with the GPL V2
+This project has been developed for public. The original source code has been changed to support the development of Open Source frameworks. The coodes are comply with the GPL V2 license.
 
 ## Installation
 
-currently only supports the installation of systems that use centos7. Pakage RPM can be uploaded to the installation process
+Currently installation only on  Centos7. Package RPM can be uploaded to the installation process
 
 **Manual Installation**
 
@@ -51,7 +51,7 @@ change port and folder to /usr/share/rimauwaf
 
 ## Tests
 
-Development of this system is still in beta development . There are a number of possible flaws in the operation, enhancements, partnerships are welcome
+Development still in beta mode. There are a number of possible flaws in the operation, enhancements. Contribution are most wellcome!
 
 ## Contributors
 
@@ -60,7 +60,7 @@ all builders are welcome to help
 core system by Hasnan
 
 team public waf
-Nawawi,Mani,Muiz,Anuar,Shaiful,Simon,Mazni,AB,Wira,Tajul,Amal 
+Nawawi,Mani,Muiz,Anuar,Shaiful,Simon,Mazni,AB,Wira,pislisSniflis,Amal 
 
 
 ## License
