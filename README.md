@@ -60,7 +60,7 @@ all builders are welcome to help
 core system by Hasnan
 
 team public waf
-Nawawi,Mani,Muiz,Anuar,Shaiful,Simon,Mazni,AB,Wira,pislisSniflis,Amal 
+Nawawi,Mani,Muiz,Anuar,Shaiful,Simon,Mazni,AB,Wira,[@pislisSniflis](https://twitter.com/pislisSniflis),Amal 
 
 
 ## License
