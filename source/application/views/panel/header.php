@@ -152,6 +152,9 @@
 .tajuk{
 	color: white;
 }
+.blink_me {
+  animation: blinker 1s linear infinite;
+}
 </style>
 	</head>
 

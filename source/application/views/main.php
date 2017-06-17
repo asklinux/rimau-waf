@@ -6,9 +6,9 @@
 										<div class="col-xs-12 col-sm-4">
 											<div class="widget-box">
 												<div class="widget-header">
-													<h4 class="widget-title">RIMAU WAF ADMINISTRATOR</h4>
+													<h4 class="widget-title">ADMINISTRATOR</h4>
 
-													
+													<img src="/asset/image/rimauwaf.jpg" width="400" />
 												</div>
 
 												<div class="widget-body">

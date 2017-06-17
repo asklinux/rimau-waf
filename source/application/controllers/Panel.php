@@ -341,6 +341,12 @@ class Panel extends CI_Controller {
 		}
 		
 	}
+        function disablerules(){
+            
+        }
+        function ownrules(){
+            
+        }
 
 }
 	

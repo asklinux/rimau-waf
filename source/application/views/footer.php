@@ -44,6 +44,12 @@
 		<!-- page specific plugin scripts -->
 
 		<!--[if lte IE 8]>
+		  <script src="assets/js/excanvas.min.js"></script>
+		<![endif]-->
+		
+		<!-- page specific plugin scripts -->
+
+		<!--[if lte IE 8]>
 		  <script src="/asset/assets/js/excanvas.min.js"></script>
 		<![endif]-->
 		

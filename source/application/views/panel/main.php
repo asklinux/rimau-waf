@@ -10,9 +10,10 @@
 	
 
 				<ul class="nav nav-list " id="menu">
-				<img src="/asset/image/Mod-Security.png" width="190" />
-					<li >
-
+                                        <li>
+                                            
+					<img src="/asset/image/rimauwaf.jpg" width="190" />
+                                        </li>
 					<li class="">
 						<a href="/index.php/panel/utama">
 							<i class="menu-icon fa fa-tachometer"></i>
@@ -20,11 +21,6 @@
 						</a>
 
 					</li>
-
-					
-					
-
-					
 
 					<li class="" id="pakage">
 						<a href="/index.php/panel/config">
@@ -41,9 +37,8 @@
 							<span class="menu-text"> Web Server </span>
 						</a>
 
-						<b class="arrow"></b>
 					</li>
-
+                           
 					<li class="">
 						<a href="/index.php/panel/rules">
 							<i class="menu-icon fa fa-bars"></i>
@@ -61,8 +56,26 @@
 						</a>
 
 						<b class="arrow"></b>
-					</li>
+					</li> 
 -->
+                                        <li class="">
+						<a href="/index.php/panel/disablerules">
+							<i class="menu-icon fa fa-filter"></i>
+							<span class="menu-text">Disable Rules</span>
+						</a>
+
+						<b class="arrow"></b>
+					</li>
+                                        
+                
+                                        <li class="">
+						<a href="/index.php/panel/ownrules">
+							<i class="menu-icon fa fa-pencil"></i>
+							<span class="menu-text">Own Rules</span>
+						</a>
+
+						<b class="arrow"></b>
+					</li>
 
 					<li class="">
 						<a href="/index.php/panel/white">

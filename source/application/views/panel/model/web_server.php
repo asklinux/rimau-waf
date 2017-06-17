@@ -12,7 +12,7 @@
 			<a id="ssl">SSL Configurationn</a></div>
 		</div>
 		-->	
-=======
+
 		<div class="pull-right"><i class="fa fa-eye" aria-hidden="true"></i> 
 			<a id="ssl">SSL Configurationn</a></div>
 		</div>	

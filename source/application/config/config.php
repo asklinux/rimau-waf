@@ -38,7 +38,7 @@ $config['modseccfg'] = '/etc/httpd/conf.d/mod_security.conf';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------
@@ -371,7 +371,6 @@ $config['encryption_key'] = 'mampsiajsajsoa121j21kkdkan9&^%';
 |
 */
 $config['sess_driver'] = 'files';
-$config['sess_cookie_name'] = 'mampux_session';
 $config['sess_expiration'] = 7200;
 $config['sess_save_path'] = NULL;
 $config['sess_match_ip'] = TRUE;

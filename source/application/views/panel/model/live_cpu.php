@@ -1,10 +1,6 @@
 
 
-<div class="col-sm-4">
-
-									
-									<div class="col-sm-12" align="center">
-										<!--
+										
 
 <div class="col-sm-10">
 <div class="col-sm-12">										
@@ -44,13 +40,41 @@
 									
 									<div class="col-sm-12" align="center">
 
-										<h4>Load average:</h4> <br />
-										<span class="label label-default"><?=$cpu_avg[0]?></span>
-<span class="label label-primary"><?=$cpu_avg[1]?></span>
-<span class="label label-success"><?=$cpu_avg[2]?></span>
-<br /><br /><br />
-<<<<<<< HEAD
--->
+<?php 
+if ($cpu_avg[0] >= '0.7') { 
+    
+    $lbl_avg = 'danger blink_me';
+}
+else{
+    $lbl_avg = 'default';
+}
+?>										
+<h4>Load average:</h4> <br />
+<span class="label label-<?=$lbl_avg?>">
+    1 minute (<?=$cpu_avg[0]?>)
+</span>
+<?php 
+if ($cpu_avg[1] >= '0.7') { 
+    
+    $lbl_avg5 = 'danger blink_me';
+}
+else{
+    $lbl_avg5 = 'primary';
+}
+?>
+<span class="label label-<?=$lbl_avg5?>">5 minute (<?=$cpu_avg[1]?>)</span>
+<?php 
+if ($cpu_avg[2] >= '0.7') { 
+    
+    $lbl_avg15 = 'danger blink_me';
+}
+else{
+    $lbl_avg15 = 'success';
+}
+?>
+<span class="label label-<?=$lbl_avg15?>">15 minite (<?=$cpu_avg[2]?>)</span>
+
+
 
 						
 							<?php 
@@ -77,20 +101,7 @@
 </div>
 
 
-<div class="col-sm-8">
-<div class="col-sm-12">										
-<div class="col-sm-4">
-  <!--
-  <div class="GaugeMeter" id="nice" data-percent="<?=$cpu["cpu0"]["nice"]?>" data-prepend="<font style='color:blue;font-size:35px;margin-left:-15px'>&ndash;</font>" data-size="200" data-theme="blue" data-back="RGBa(0,0,255,.1)" data-animate_gauge_colors="1" data-animate_text_colors="1" data-width="2" data-label="sys" data-label_color="#000"></div>
-  -->
-</div>
-<div class="col-sm-4">
- <div class="GaugeMeter" id="cpu" data-percent="<?=$cpu["cpu0"]["user"]?>" data-append="%" data-size="200" data-theme="red" data-back="RGBa(0,0,225,.1)" data-animate_gauge_colors="1" data-animate_text_colors="1" data-width="15" data-label="CPU Usage" data-style="Arch" data-label_color="#000"></div>
-</div>
 
-</div>
-
-</div>
 
 									
 <script src="/asset/assets/js/jquery.2.1.1.min.js"></script>
