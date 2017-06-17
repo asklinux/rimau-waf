@@ -17,44 +17,47 @@ Currently installation only on  Centos 7. Package RPM can be uploaded to the ins
 
 **Manual Installation**
 Log as root user and install all required package via YUM package manager
-```yum install nginx
+```
+yum install nginx
 yum install php php-fpm
 yum install sqlite
 yum install httpd
 yum install mod_security
 ```
 Clone repository, move to unix system resources as 'rimauwaf'
-```git clone https://github.com/asklinux/rimau-waf.git
+```
+git clone https://github.com/asklinux/rimau-waf.git
 mv rimau-waf /usr/share/rimauwaf
 ```
 Navigate to 'rimauwaf' and rename `source` directory as `web`
-```cd /usr/share/rimauwaf
+```
+cd /usr/share/rimauwaf
 mv source web
 ```
 Run this command below to modify sudoers file
-```echo 'Defaults:php-fpm !requiretty' >> /etc/sudoers
+```
+echo 'Defaults:php-fpm !requiretty' >> /etc/sudoers
 echo "User_Alias WWW_USER2 = php-fpm" >> /etc/sudoers
 echo "Cmnd_Alias WWW_COMMANDS2 = /usr/bin/systemctl,/usr/bin/ln,/usr/bin/unlink,/usr/share/rimauwaf/run.sh,/usr/bin/tail,/usr/bin/sed,/usr/bin/cat,/usr/bin/grep,/usr/sbin/apachectl" >> /etc/sudoers
 echo "WWW_USER2 localhost = (ALL) NOPASSWD:WWW_COMMANDS2" >> /etc/sudoers
 ```
 Allow the webserver to  customized SELinux policy as permissive 
-```semanage permissive -a httpd_t
 ```
-
+semanage permissive -a httpd_t
+```
 change port and folder to /usr/share/rimauwaf
-```vi /etc/nginx/nginx.conf
 ```
-
+vi /etc/nginx/nginx.conf
+```
 Enable nginx to automatically load when booted or restart
-```systemctl enable nginx
+```
+systemctl enable nginx
 ```
 
 ## Tests
-
 Development still in beta mode. There are a number of possible flaws in the operation, enhancements. Contribution are most welcome!
 
 ## Contributors
-
 all builders are welcome to help 
 
 core system by Hasnan
