@@ -60,7 +60,13 @@ class Datasistem extends CI_Model {
 
 		}
 		if($id == "d") {
-			$targetpathbase='/usr/lib/modsecurity.d/mampu_rules/';
+			$targetpathbase='/usr/lib/modsecurity.d/rimau_rules/';
+			$targetpathanom='/etc/httpd/modsecurity.d/';
+			$target=$targetpathbase.$fail;
+
+		}
+                if($id == "e") {
+			$targetpathbase='/usr/lib/modsecurity.d/comodo/';
 			$targetpathanom='/etc/httpd/modsecurity.d/';
 			$target=$targetpathbase.$fail;
 

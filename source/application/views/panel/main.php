@@ -80,7 +80,7 @@
 					<li class="">
 						<a href="/index.php/panel/white">
 							<i class="menu-icon fa fa-eraser"></i>
-							<span class="menu-text"> White Rules </span>
+							<span class="menu-text"> Whitelist </span>
 						</a>
 
 						<b class="arrow"></b>
@@ -88,7 +88,7 @@
 					<li class="">
 						<a href="/index.php/panel/black">
 							<i class="menu-icon fa fa-ban"></i>
-							<span class="menu-text"> Black Rules </span>
+							<span class="menu-text"> Blacklist  </span>
 						</a>
 
 						<b class="arrow"></b>

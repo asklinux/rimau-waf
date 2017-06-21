@@ -13,7 +13,8 @@
 		
 		$ptap_profile = '';
 		$itap_profile = '';
-		
+		$ptap_comodo = '';
+		$itap_comodo = '';
 		$ptap_messages = '';
 		$itap_messages = '';
 		
@@ -28,7 +29,8 @@
 		
 		$ptap_home = '';
 		$itap_home = '';
-		
+		$ptap_comodo = '';
+		$itap_comodo = '';
 		$ptap_messages = '';
 		$itap_messages = '';
 		
@@ -44,9 +46,29 @@
 		
 		$ptap_home = '';
 		$itap_home = '';
-		
+		$ptap_comodo = '';
+		$itap_comodo = '';
 		$ptap_messages = 'class="active"';
 		$itap_messages = 'active';
+		
+
+	}
+        else if ($mytab == "#comodo" ){
+		
+		$ptap_profile = '';
+		$itap_profile = '';
+		
+		$ptap_anomaly = '';
+		$itap_anomaly = '';
+		
+		$ptap_home = '';
+		$itap_home = '';
+		
+                $ptap_messages = '';
+		$itap_messages = '';
+                
+		$ptap_comodo = 'class="active"';
+		$itap_comodo = 'active';
 		
 
 	}
@@ -61,6 +83,8 @@
 		$itap_profile = '';
 		$ptap_messages = '';
 		$itap_messages = '';
+                $ptap_comodo = '';
+		$itap_comodo = '';
 	}
 
 ?>
@@ -70,8 +94,9 @@
     <li role="presentation" <?=$ptap_home?>    ><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Base Rules</a></li>
     <li role="presentation" <?=$ptap_anomaly?> ><a href="#anomaly" aria-controls="anomaly" role="tab" data-toggle="tab">Anomaly Protocol</a></li>
     <li role="presentation" <?=$ptap_profile?> > <a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Experimental Rules</a></li>
-    <li role="presentation" <?=$ptap_messages?> ><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Other Rules</a></li>
-  	<li role="presentation"><a href="#aktif" aria-controls="aktif" role="tab" data-toggle="tab">Activated Rules</a></li>
+    <li role="presentation" <?=$ptap_comodo?> ><a href="#comodo" aria-controls="comodo" role="tab" data-toggle="tab">Comodo Rules</a></li>
+    <li role="presentation" <?=$ptap_messages?> ><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Create Rules</a></li>
+    <li role="presentation"><a href="#aktif" aria-controls="aktif" role="tab" data-toggle="tab">Activated Rules</a></li>
 
   </ul>
 
@@ -89,7 +114,7 @@
 			foreach($baseRules as $file) {
 			?>
 			<tr >
-				<td><?=str_replace('_',' ',substr($file,19,-5))?></td>
+                            <td onclick="readfile('a','<?=$file?>');"><?=str_replace('_',' ',substr($file,19,-5))?></td>
 				<td width="5%">
 				<?php if (in_array($file, $activatedRules)){ ?>
 		
@@ -203,15 +228,53 @@
 		</table>
 
 
-	</div>	
-    <div role="tabpanel" class="tab-pane"  <?=$itap_messages?> id="messages">
+	</div>
+  <div role="tabpanel" class="tab-pane <?=$itap_comodo?>"   id="comodo">
     	
     	<table class='table table-bordered'>
 			<tr>
 				<th>Mod Security Config Files</th><th>Status</th>
 			</tr>
 			<?php
-			foreach($mampuRules as $file) {
+			foreach($comodoRules as $file) {
+			?>
+			<tr >
+				<td><?=str_replace('_',' ',substr($file,3,-5))?></td>
+				<td width="5%">
+				<?php if (in_array($file, $activatedRules)){ ?>
+		
+			
+				   	<div class="widget-toolbar">
+					<label> <small class="green"> <b>Filter</b> </small>
+						<input onclick="aktif('e','<?=$file?>',1)" id="skip-validation" type="checkbox" checked="true"  class="ace ace-switch ace-switch-4" />
+						<span class="lbl middle"></span> </label>
+					</div>
+		
+				<?php } else { ?> 
+					
+					<div class="widget-toolbar">
+					<label> <small class="green"> <b>Filter</b> </small>
+						<input onclick="aktif('e','<?=$file?>',0)" id="skip-validation" type="checkbox"   class="ace ace-switch ace-switch-4" />
+						<span class="lbl middle"></span> </label>
+					</div>
+				<?php } ?>
+				
+
+				</td>
+			</tr>
+			<?php } ?>
+			
+		</table>
+    	
+    </div>
+    <div role="tabpanel" class="tab-pane <?=$itap_messages?>"   id="messages">
+    	
+    	<table class='table table-bordered'>
+			<tr>
+				<th>Mod Security Config Files</th><th>Status</th>
+			</tr>
+			<?php
+			foreach($rimauRules as $file) {
 			?>
 			<tr >
 				<td><?=str_replace('_',' ',substr($file,19,-5))?></td>
@@ -253,7 +316,7 @@
 			<?php foreach($activatedRules as $file) { ?>
 			
 			<tr>
-				<td><?=str_replace('_',' ',substr($file,19,-5))?></td><td>Enabled</td>
+				<td><?=str_replace('_',' ',substr($file,3,-5))?></td><td>Enabled</td>
 			</tr>
 			<?php } ?>
 			
@@ -268,7 +331,8 @@
 	function aktif(id,fail,ack){
 		
 		var url = 'panel/actif_rules'
-		$.post(url,{id:id,fail:fail,ack:ack},function(data){
+		
+                    $.post(url,{id:id,fail:fail,ack:ack},function(data){
 			
 			var link = $('li.active a[data-toggle="tab"]');
 			link.parent().removeClass('active');
@@ -283,6 +347,9 @@
 
 		});
 	}
+        function readfile(id,file){
+            $('#paparx').load('panel/rulesfail',{id:id,file:file}).show();
+        }
 	
 	
 </script>

@@ -76,9 +76,13 @@ class Panel extends CI_Controller {
 		$files=array_diff(scandir($dir),Array(".",".."));
 		$data['anomalyProtocol']=preg_grep("/^(.+)\.conf$/", $files);
 	
-		$dir='/usr/lib/modsecurity.d/mampu_rules';
+		$dir='/usr/lib/modsecurity.d/rimau_rules';
 		$files=array_diff(scandir($dir),Array(".",".."));
-		$data['mampuRules']=preg_grep("/^(.+)\.conf$/", $files);
+		$data['rimauRules']=preg_grep("/^(.+)\.conf$/", $files);
+                
+                $dir='/usr/lib/modsecurity.d/comodo';
+		$files=array_diff(scandir($dir),Array(".",".."));
+		$data['comodoRules']=preg_grep("/^(.+)\.conf$/", $files);
 	
 		$data['mytab'] = $this->input->post('stab');
 	
@@ -343,8 +347,46 @@ class Panel extends CI_Controller {
 	}
         function disablerules(){
             
+		
+		$data['listid'] = $this->datasistem->listdata(null,'tblid_added',null,null)->result();
+	
+		
+		$this->load->view('panel/model/disable',$data);
         }
         function ownrules(){
+            
+        }
+        function rulesfail(){
+            
+                $id = $this->input->post('id');
+                
+                if($id == "a") { 
+			$targetpathbase='/usr/lib/modsecurity.d/base_rules/';
+		} 
+		
+		if($id == "b") {
+			$targetpathexp='/usr/lib/modsecurity.d/experimental_rules/';
+		} 
+
+		if($id == "c") {
+			$targetpathbase='/usr/lib/modsecurity.d/base_rules/';
+			
+
+		}
+		if($id == "d") {
+			$targetpathbase='/usr/lib/modsecurity.d/rimau_rules/';
+		
+
+		}
+                if($id == "e") {
+			$targetpathbase='/usr/lib/modsecurity.d/comodo/';
+		
+
+		}  
+                
+            echo "<pre>";
+            echo file_get_contents($targetpathbase.$this->input->post('file'));
+            echo "</pre>";
             
         }
 
