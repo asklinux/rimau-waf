@@ -385,7 +385,7 @@ class Panel extends CI_Controller {
 		}  
                 
             echo "<pre>";
-            echo file_get_contents($targetpathbase.$this->input->post('file'));
+            echo file_get_contents($targetpathbase . basename($this->input->post('file')) );
             echo "</pre>";
             
         }
