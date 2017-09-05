@@ -78,27 +78,27 @@ class Datasistem extends CI_Model {
 		
 		if($ack == 1) {
 			if($id=="a" | $id=="b") {
-			return shell_exec("sudo /usr/bin/unlink $link/$fail");
+			return shell_exec("sudo /usr/bin/unlink $link/" . escapeshellarg($fail));
 			} elseif($id=="c") {
-			  return shell_exec("sudo /usr/bin/unlink $link/$fail;sudo /usr/bin/unlink $link/modsecurity_crs_21_protocol_anomalies.conf;sudo /usr/bin/unlink $link/modsecurity_crs_49_inbound_blocking.conf;sudo /usr/bin/unlink $link/modsecurity_crs_50_outbound.conf;sudo /usr/bin/unlink $link/modsecurity_crs_59_outbound_blocking.conf");
+			  return shell_exec("sudo /usr/bin/unlink $link/" . escapeshellarg($fail) . ";sudo /usr/bin/unlink $link/modsecurity_crs_21_protocol_anomalies.conf;sudo /usr/bin/unlink $link/modsecurity_crs_49_inbound_blocking.conf;sudo /usr/bin/unlink $link/modsecurity_crs_50_outbound.conf;sudo /usr/bin/unlink $link/modsecurity_crs_59_outbound_blocking.conf");
 			}
 			else {
-			return shell_exec("sudo /usr/bin/unlink $link/$fail");	
+			return shell_exec("sudo /usr/bin/unlink $link/" . escapeshellarg($fail) );	
 			}
 		}	
 		if ($ack == 0){
 			if($id=="a" | $id=="b") {
-			return shell_exec("sudo ln -s $target $link/$fail");
+			return shell_exec("sudo ln -s " . escapeshellarg($target) . " $link/" . escapeshellarg($fail));
 			} elseif($id=="c") {
 			  
-			  shell_exec("sudo ln -s $target $link/$fail");
+			  shell_exec("sudo ln -s $target $link/" . escapeshellarg($fail));
 			  shell_exec("sudo ln -s $targetpathbase/modsecurity_crs_21_protocol_anomalies.conf $link/modsecurity_crs_21_protocol_anomalies.conf");	
 			  shell_exec("sudo ln -s $targetpathbase/modsecurity_crs_49_inbound_blocking.conf $link/modsecurity_crs_49_inbound_blocking.conf");
 			  shell_exec("sudo ln -s $targetpathbase/modsecurity_crs_50_outbound.conf $link/modsecurity_crs_50_outbound.conf");
 			  shell_exec("sudo ln -s $targetpathbase/modsecurity_crs_59_outbound_blocking.conf $link/modsecurity_crs_59_outbound_blocking.conf");
 			}
 			else{
-			return shell_exec("sudo ln -s $target $link/$fail");
+			return shell_exec("sudo ln -s " . escapeshellarg($target) . " $link/" . escapeshellarg($fail));
 			}
 		}
 		
@@ -120,7 +120,7 @@ class Datasistem extends CI_Model {
 		
 		if($mode=="DetectionOnly" ||$mode=="On" || $mode=="Off"){
 			$modsecurityconfig= $this->config->item('modseccfg');
-			$command="sudo /usr/bin/sed -i -e 's/[^#]\sSecRuleEngine \(DetectionOnly\|On\|Off\)/SecRuleEngine $mode/g' $modsecurityconfig;echo $?";
+			$command="sudo /usr/bin/sed -i -e 's/[^#]\sSecRuleEngine \(DetectionOnly\|On\|Off\)/SecRuleEngine " . escapeshellarg($mode) . "/g' " . escapeshellarg($modsecurityconfig) . ";echo $?";
 			$code=shell_exec($command);
 		}
 		if($code==0){
@@ -134,7 +134,7 @@ class Datasistem extends CI_Model {
 			
 		
 		$modesecurityconfig = $this->config->item('modseccfg');
-		$command='sudo /usr/bin/cat '.$modesecurityconfig.' | /usr/bin/grep "[^#]\sSecRuleEngine\\s.\+[Off|On|DetectionOnly]$"';
+		$command='sudo /usr/bin/cat '.escapeshellarg($modesecurityconfig).' | /usr/bin/grep "[^#]\sSecRuleEngine\\s.\+[Off|On|DetectionOnly]$"';
 		
 		$output=shell_exec($command);
 		$hasil = $output;
@@ -189,7 +189,7 @@ class Datasistem extends CI_Model {
 		if($mode=="DetectionOnly" ||$mode=="On" || $mode=="Off") {
 			
 		$modsecurityconfig= $this->config->item('modseccfg'); 
-		$command="sudo sed -i -e 's/^    SecRuleEngine \(DetectionOnly\|On\|Off\)/    SecRuleEngine ".$mode."/g' ".$modsecurityconfig.";echo $?";
+		$command="sudo sed -i -e 's/^    SecRuleEngine \(DetectionOnly\|On\|Off\)/    SecRuleEngine ".escapeshellarg($mode)."/g' ".escapeshellarg($modsecurityconfig).";echo $?";
 		$code=shell_exec($command);
 		if($code==0)
 			return "Success:".$code;
