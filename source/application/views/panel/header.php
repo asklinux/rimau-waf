@@ -174,7 +174,7 @@
 				</button>
 
 				<div class="navbar-header pull-left">
-					<h4 class="tajuk" >RIMAU WAF OPEN PROJECT </h4> 
+					<h4 class="tajuk" >RIMAU Web Aplication Firewall</h4> 
 				</div>
 
 				<div class="navbar-buttons navbar-header pull-right" role="navigation">

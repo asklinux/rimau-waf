@@ -3,11 +3,11 @@
 	<div class="page-content">						
 	
 
-          <h3>Disable Rules</h3>
+          <h3>Write Own Rules</h3>
           <p>
           <div class="row">
               <div class="col-md-12">
-                <div class="pull-left">RULES ID : <input type="text" name="url" id="ruleid" />  <button id="addidx">Add</button></div>
+                <div class="pull-left">RULES ID : <input type="text" name="url" id="wdurl" />  <button id="waddurl">Add</button></div>
               
               <div class="pull-right">
               	<!--
@@ -27,9 +27,10 @@
               <thead>
               <tr>
                   <th>Rules ID</th>
+                  <th width="50%">Rules</th>
                   <th>Status</th>
                   
-                  <th>------</th>
+                  <th>Function</th>
               </tr>
               </thead>
               <tfoot>
@@ -38,12 +39,12 @@
               <tbody>
          	  <?php foreach ($listid as $b) { ?>
               <tr>
-                  <td><?=$b->rules_id?></td>
+                  <td><?=$b->orid?></td>
+                  <td width="50%"><?=$b->rules?></td>
                   <td width="3%"><?=$b->status?></td>
-                  
-                  <td width="15%">
-                  	<button onclick="editrules(<?=$b->id?>)" data-toggle="modal" data-target="#myRule">Edit</button> 
-                  	<button onclick="padamrules(<?=$b->id?>)">Delete</button>
+                  <td width="5%">
+                  	<button onclick="editrules(<?=$b->orid?>)" data-toggle="modal" data-target="#myRule">Edit</button> 
+                  	<button onclick="padamrules(<?=$b->orid?>)">Delete</button>
                   	</td>  
               </tr>
               <?php } ?>
@@ -84,36 +85,54 @@ $(document).ready(function() {
     break;		
 });
 
-$("#addidx").click(function(){
+$("#waddurl").click(function(){
 	
 	
-	if ($('#ruleid').val() === '') {
+	if ($('#wdurl').val() === ''){
 	
-		alert("please enter the id information");
+		alert("please enter the url information");
 	
 	}
 	else {
 		
-		$.post('myrules/disable',{url:$('#ruleid').val(),status:0},function(data){
+		$.post('myrules/whitelist',{url:$('#wdurl').val(),jenis:0},function(data){
 		
 			var link = $('li.active a[data-toggle="tab"]');
 			link.parent().removeClass('active');
 			var tabLink = link.attr('href');
 			
-			$('#paparx').load('panel/disablerules',{stab:tabLink}).show();
+			$('#paparx').load('panel/white',{stab:tabLink}).show();
 		}); 
 	}
 	
 });
 
+$("#waddip").click(function(){
+	
+	if ($('#wdip').val() === ''){
+	
+		alert("please enter the url information");
+	
+	}
+	else {
+		$.post('myrules/whitelist',{url:$('#wdip').val(),jenis:1},function(data){
+				
+				var link = $('li.active a[data-toggle="tab"]');
+				link.parent().removeClass('active');
+				var tabLink = link.attr('href');
+				
+				$('#paparx').load('panel/white',{stab:tabLink}).show();
+		});
+	}
+});
 
 function padamrules(id){
 	
 	if(confirm("Are you sure you want to delete this?")){
 		
-		$.post('panel/padamrules',{id:id,jenis:3},function(data){
+		$.post('panel/padamrules',{id:id,jenis:2},function(data){
 		
-		$('#paparx').load('panel/disablerules').show();
+		$('#paparx').load('panel/white').show();
 		
 		});		
 
@@ -124,7 +143,7 @@ function padamrules(id){
 }
 function editrules(id){
 	
-	$.post('panel/editrules',{id:id,jenis:3},function(data){
+	$.post('panel/editrules',{id:id,jenis:2},function(data){
 		
 		
 		$("#popedit").html(data);
@@ -141,7 +160,7 @@ function saveedit(){
 	
 	$.post('panel/editrulessimpan',dataserver,function(data){
 
-		$('#paparx').load('panel/disablerules').show();
+		$('#paparx').load('panel/white').show();
 	});
 	
 }

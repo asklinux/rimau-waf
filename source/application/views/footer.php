@@ -1,11 +1,12 @@
 				<div align="center" class="footer-inner">
 					<div class="footer-content">
 						<span class="bigger-10">
-							<span class="blue bolder">Rimau Waf</span>
-							Application &copyleft; 2017 Under GPL V2 <br /> Uptime :  <?php echo $uptime; ?>
+							<span class="blue bolder">Rimau Waf Enteprice </span>
+							Cloud Application Tunnelbiz &copyright; 2017 <br/>for Microsoft Azure Cloud | Uptime :  <?php echo $uptime; ?>
 						</span>
 
 						<br /> <br />
+						Powerd By : 
 						<img width="90" src="/asset/image/owsap.png" /> | <img width="90" src="/asset/image/Mod-Security.png" /> 
 					</div>
 				</div>

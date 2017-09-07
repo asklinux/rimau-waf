@@ -80,7 +80,7 @@ class Panel extends CI_Controller {
 		$files=array_diff(scandir($dir),Array(".",".."));
 		$data['rimauRules']=preg_grep("/^(.+)\.conf$/", $files);
                 
-                $dir='/usr/lib/modsecurity.d/comodo';
+        $dir='/usr/lib/modsecurity.d/comodo';
 		$files=array_diff(scandir($dir),Array(".",".."));
 		$data['comodoRules']=preg_grep("/^(.+)\.conf$/", $files);
 	
@@ -277,6 +277,15 @@ class Panel extends CI_Controller {
 						
 			echo $this->datasistem->write_whitelist();
 		}
+		else if ($this->input->post('jenis') == 3){	
+			$data = array(
+				'id' => $this->input->post('id')
+			);	
+			$this->datasistem->remove($data,'tblid_added');
+						
+			echo $this->datasistem->write_disablelist();
+		}
+		
 	}
 	function editrules(){
 		
@@ -299,6 +308,16 @@ class Panel extends CI_Controller {
 			$maklumat['rules'] = $this->datasistem->listdata($data,'whitelist',null,null)->result_array();
 			
 			$this->load->view('panel/model/edit_rules_white',$maklumat);
+		}
+		else if ($this->input->post('jenis') == 3){
+			
+			$data = array(
+				'id' => $this->input->post('id')
+			);	
+			
+			$maklumat['rules'] = $this->datasistem->listdata($data,'tblid_added',null,null)->result_array();
+			
+			$this->load->view('panel/model/edit_rules_disable',$maklumat);
 		}
 
 	}
@@ -345,7 +364,7 @@ class Panel extends CI_Controller {
 		}
 		
 	}
-        function disablerules(){
+    function disablerules(){
             
 		
 		$data['listid'] = $this->datasistem->listdata(null,'tblid_added',null,null)->result();
@@ -353,9 +372,12 @@ class Panel extends CI_Controller {
 		
 		$this->load->view('panel/model/disable',$data);
         }
-        function ownrules(){
-            
-        }
+    function ownrules(){
+      	$data['listid'] = $this->datasistem->listdata(null,'ownrules',null,null)->result();
+	
+		
+		$this->load->view('panel/model/own',$data);      
+    }
         function rulesfail(){
             
                 $id = $this->input->post('id');

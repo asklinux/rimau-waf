@@ -4,6 +4,8 @@
 	<ul class="nav nav-tabs">
         <li class="active"><a data-toggle="tab" href="#url">URL</a> </li>
         <li><a data-toggle="tab" href="#ip">IP</a> </li>
+        <li><a data-toggle="tab" href="#all">All Rules</a> </li>
+
 	</ul>
 
   <div class="tab-content">
@@ -42,16 +44,16 @@
           
               </tfoot>
               <tbody>
-         	  <?php foreach ($whitelist_url as $b) { ?>
+         	  <?php foreach ($whitelist_url as $u) { ?>
               <tr>
-                  <td><?=10000+$b->wid?></td>
-                  <td><?=$b->url_pattern?></td>
-                  <td width="3%"><?=$b->status?></td>
+                  <td><?=10000+$u->wid?></td>
+                  <td><?=$u->url_pattern?></td>
+                  <td width="3%"><?=$u->status?></td>
                   
                   <td><?=$b->date_created?></td>
                   <td width="15%">
-                  	<button onclick="editrules(<?=$b->wid?>)" data-toggle="modal" data-target="#myRule">Edit</button> 
-                  	<button onclick="padamrules(<?=$b->wid?>)">Delete</button>
+                  	<button onclick="editrules(<?=$u->wid?>)" data-toggle="modal" data-target="#myRule">Edit</button> 
+                  	<button onclick="padamrules(<?=$u->wid?>)">Delete</button>
                   	</td>  
               </tr>
               <?php } ?>
@@ -112,6 +114,39 @@
           </div>
           </p>
       </div>
+          <div id="all" class="tab-pane fade">
+      <h3>All Rules</h3>
+	  <p>
+    	<table id="example" class="table table-striped table-bordered" width="100%" cellspacing="0">
+        <thead>
+            <tr>
+				<th>ID</th>
+                <th>Name</th>
+                <th>Status</th>
+               
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tfoot>
+     
+        </tfoot>
+        <tbody>
+           <?php foreach ($whitelist as $b) { ?>
+              <tr>
+                  <td><?=20000+$b->bid?></td>
+                  <td><?=$b->url_pattern?></td>
+                  <td width="3%"><?=$b->status?></td>
+                  
+                  <td width="15%">
+                  	<button onclick="editrules(<?=$b->bid?>)" data-toggle="modal" data-target="#myRule">Edit</button> 
+                  	<button onclick="padamrules(<?=$b->bid?>)">Delete</button></td>
+              </tr>
+              <?php } ?>
+           
+        </tbody>
+    </table>
+    </p>
+    </div>
   </div>
 
 </div><!-- /.page-content -->
@@ -138,7 +173,8 @@
 <script>
 $(document).ready(function() {
     clearTimeout(lari);
-    clearTimeout(livelog);		
+    clearTimeout(livelog);
+    break;		
 });
 
 $("#waddurl").click(function(){

@@ -1,4 +1,3 @@
-
 					
 	<div class="page-content">						
 	<ul class="nav nav-tabs">
@@ -90,7 +89,6 @@
                 <th>Name</th>
                 <th>Status</th>
                
-                <th>Create Date</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -104,7 +102,6 @@
                   <td><?=$b->url_pattern?></td>
                   <td width="3%"><?=$b->status?></td>
                   
-                  <td><?=$b->date_created?></td>
                   <td width="15%">
                   	<button onclick="editrules(<?=$b->bid?>)" data-toggle="modal" data-target="#myRule">Edit</button> 
                   	<button onclick="padamrules(<?=$b->bid?>)">Delete</button></td>
@@ -142,7 +139,8 @@
 <script>
 $(document).ready(function() {
     clearTimeout(lari);
-    clearTimeout(livelog);		
+    clearTimeout(livelog);
+    break;		
 });
 
 $("#addurl").click(function(){

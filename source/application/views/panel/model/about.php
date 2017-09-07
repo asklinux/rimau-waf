@@ -15,6 +15,7 @@
 <script>
 $(document).ready(function() {
     clearTimeout(lari);
-    clearTimeout(livelog);		
+    clearTimeout(livelog);
+    break;		
 });
 </script>

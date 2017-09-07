@@ -302,6 +302,20 @@ class Myrules extends CI_Controller {
 		$this->datasistem->write_whitelist();
 		
 	}
+	function disable(){
+		
+		$simpan = array(
+			'rules_id' => $this->input->post('url'),
+			'codes' => 'SecRuleRemoveByID '.$this->input->post('url'),
+			'status' => $this->input->post('status')
+		);
+		
+		echo $this->datasistem->save($simpan,'tblid_added');
+		
+		
+		$this->datasistem->write_disablelist();
+		
+	}
 	function create_white(){
 			
 		echo $this->datasistem->write_whitelist();

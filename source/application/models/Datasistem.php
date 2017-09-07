@@ -41,31 +41,48 @@ class Datasistem extends CI_Model {
 		
 		return $this->db->get('user')->row();
 	}
+	function check_login_pam($id,$pass){
+		
+		if(pam_auth($id,$pass,$error) ) {
+
+        return  "You are authenticated!";
+
+		} else {
+		
+		        return $error;
+		
+		}
+	}
 	function rules_act($id,$fail,$ack){
 		
-		if($id == "a") { 
+		if($id == "a") {
+			//dir for base rules 
 			$targetpathbase='/usr/lib/modsecurity.d/base_rules/';
 			$target=$targetpathbase.$fail;
 		} 
 		
 		if($id == "b") {
+			//dir for experimental rules
 			$targetpathexp='/usr/lib/modsecurity.d/experimental_rules/';
 			 $target=$targetpathexp.$fail;
 		} 
 
 		if($id == "c") {
+			//dir for anomaly rulse set
 			$targetpathbase='/usr/lib/modsecurity.d/base_rules/';
 			$targetpathanom='/etc/httpd/modsecurity.d/';
 			$target=$targetpathanom.$fail;
 
 		}
 		if($id == "d") {
+			//dir for user own rules
 			$targetpathbase='/usr/lib/modsecurity.d/rimau_rules/';
 			$targetpathanom='/etc/httpd/modsecurity.d/';
 			$target=$targetpathbase.$fail;
 
 		}
-                if($id == "e") {
+        if($id == "e") {
+        	//dir for comodo rules
 			$targetpathbase='/usr/lib/modsecurity.d/comodo/';
 			$targetpathanom='/etc/httpd/modsecurity.d/';
 			$target=$targetpathbase.$fail;
@@ -78,18 +95,21 @@ class Datasistem extends CI_Model {
 		
 		if($ack == 1) {
 			if($id=="a" | $id=="b") {
-			return shell_exec("sudo /usr/bin/unlink $link/$fail");
+			return shell_exec("sudo unlink $link/$fail");
 			} elseif($id=="c") {
-			  return shell_exec("sudo /usr/bin/unlink $link/$fail;sudo /usr/bin/unlink $link/modsecurity_crs_21_protocol_anomalies.conf;sudo /usr/bin/unlink $link/modsecurity_crs_49_inbound_blocking.conf;sudo /usr/bin/unlink $link/modsecurity_crs_50_outbound.conf;sudo /usr/bin/unlink $link/modsecurity_crs_59_outbound_blocking.conf");
+			  return shell_exec("sudo unlink $link/$fail;sudo /usr/bin/unlink $link/modsecurity_crs_21_protocol_anomalies.conf;sudo /usr/bin/unlink $link/modsecurity_crs_49_inbound_blocking.conf;sudo /usr/bin/unlink $link/modsecurity_crs_50_outbound.conf;sudo /usr/bin/unlink $link/modsecurity_crs_59_outbound_blocking.conf");
 			}
 			else {
-			return shell_exec("sudo /usr/bin/unlink $link/$fail");	
+			return shell_exec("sudo unlink $link/$fail");
+
 			}
 		}	
 		if ($ack == 0){
 			if($id=="a" | $id=="b") {
+				
 			return shell_exec("sudo ln -s $target $link/$fail");
-			} elseif($id=="c") {
+				
+			}elseif($id=="c") {
 			  
 			  shell_exec("sudo ln -s $target $link/$fail");
 			  shell_exec("sudo ln -s $targetpathbase/modsecurity_crs_21_protocol_anomalies.conf $link/modsecurity_crs_21_protocol_anomalies.conf");	
@@ -99,10 +119,12 @@ class Datasistem extends CI_Model {
 			}
 			else{
 			return shell_exec("sudo ln -s $target $link/$fail");
+		
 			}
 		}
 		
 	}
+
 	function reload(){
 		
 		return shell_exec('sudo /usr/bin/systemctl restart httpd 2>&1'  );
@@ -203,7 +225,7 @@ class Datasistem extends CI_Model {
 		$this->load->helper('file');
 		$data = 'SecRule REMOTE_ADDR "^192\.168\.50\.1$" phase:1,log,allow,ctl:ruleEngine=Off,id:999945\n';
 		$data .= 'SecRule REMOTE_ADDR "^192\.168\.50\.1$" phase:1,log,allow,ctl:ruleEngine=Off,id:999945';
-		if ( !write_file('/lib/modsecurity.d/mampu_rules/modsecurity_crs_10_whitelist.conf', $data)){
+		if ( !write_file('/lib/modsecurity.d/rimau_rules/modsecurity_crs_10_whitelist.conf', $data)){
 		     return 'Unable to write the file';
 		}
 	}
@@ -255,7 +277,7 @@ ProxyRequests Off
 			$data .= 'SecRule REMOTE_ADDR "^'.$w->url_pattern.'$" phase:1,log,deny,ctl:ruleEngine=Off,id:'.$gid."\n";
 		}
 		 
-		if ( !write_file('/lib/modsecurity.d/mampu_rules/modsecurity_crs_10_blacklist.conf', $data)){
+		if ( !write_file('/lib/modsecurity.d/rimau_rules/modsecurity_crs_10_blacklist.conf', $data)){
 		     return 'Unable to write the file';
 		}
 	}
@@ -263,7 +285,7 @@ ProxyRequests Off
 			
 		$this->load->helper('file');
 		
-		$data = '#White Rules mampu dari database'."\n";
+		$data = '#White Rules rimau dari database'."\n";
 		
 		$getw = $this->datasistem->listdata(null,'whitelist',null,null)->result();
 	
@@ -272,7 +294,26 @@ ProxyRequests Off
 			$data .= 'SecRule REMOTE_ADDR "^'.$w->url_pattern.'$" phase:1,log,allow,ctl:ruleEngine=Off,id:'.$gid."\n";
 		}
 		 
-		if ( !write_file('/lib/modsecurity.d/mampu_rules/modsecurity_crs_10_whitelist.conf', $data)){
+		if ( !write_file('/lib/modsecurity.d/rimau_rules/modsecurity_crs_10_whitelist.conf', $data)){
+		     return 'Unable to write the file';
+		}
+	}
+	
+	function write_disablelist(){
+			
+		$this->load->helper('file');
+		
+		$data = '#White Rules rimau dari database'."\n";
+		
+		$getw = $this->datasistem->listdata(null,'tblid_added',null,null)->result();
+		
+		foreach ($getw as $w) {
+			//$gid = 10000+$w->wid;
+			//$data .= 'SecRule REMOTE_ADDR "^'.$w->url_pattern.'$" phase:1,log,allow,ctl:ruleEngine=Off,id:'.$gid."\n";
+			$data .= $w->codes."\n";
+		}
+		 
+		if ( !write_file('/lib/modsecurity.d/rimau_rules/modsecurity_crs_10_disable_rules.conf', $data)){
 		     return 'Unable to write the file';
 		}
 	}
