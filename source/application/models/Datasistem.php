@@ -95,35 +95,20 @@ class Datasistem extends CI_Model {
 		
 		if($ack == 1) {
 			if($id=="a" | $id=="b") {
-<<<<<<< HEAD
-			return shell_exec("sudo unlink $link/$fail");
-			} elseif($id=="c") {
-			  return shell_exec("sudo unlink $link/$fail;sudo /usr/bin/unlink $link/modsecurity_crs_21_protocol_anomalies.conf;sudo /usr/bin/unlink $link/modsecurity_crs_49_inbound_blocking.conf;sudo /usr/bin/unlink $link/modsecurity_crs_50_outbound.conf;sudo /usr/bin/unlink $link/modsecurity_crs_59_outbound_blocking.conf");
-			}
-			else {
-			return shell_exec("sudo unlink $link/$fail");
 
-=======
 			return shell_exec("sudo /usr/bin/unlink $link/" . escapeshellarg($fail));
 			} elseif($id=="c") {
 			  return shell_exec("sudo /usr/bin/unlink $link/" . escapeshellarg($fail) . ";sudo /usr/bin/unlink $link/modsecurity_crs_21_protocol_anomalies.conf;sudo /usr/bin/unlink $link/modsecurity_crs_49_inbound_blocking.conf;sudo /usr/bin/unlink $link/modsecurity_crs_50_outbound.conf;sudo /usr/bin/unlink $link/modsecurity_crs_59_outbound_blocking.conf");
 			}
 			else {
 			return shell_exec("sudo /usr/bin/unlink $link/" . escapeshellarg($fail) );	
->>>>>>> cf1b681ddf7cec7b14e20f0c1b2c2c4f8421c41e
 			}
 		}	
 		if ($ack == 0){
 			if($id=="a" | $id=="b") {
-<<<<<<< HEAD
-				
-			return shell_exec("sudo ln -s $target $link/$fail");
-				
-			}elseif($id=="c") {
-=======
+
 			return shell_exec("sudo ln -s " . escapeshellarg($target) . " $link/" . escapeshellarg($fail));
 			} elseif($id=="c") {
->>>>>>> cf1b681ddf7cec7b14e20f0c1b2c2c4f8421c41e
 			  
 			  shell_exec("sudo ln -s $target $link/" . escapeshellarg($fail));
 			  shell_exec("sudo ln -s $targetpathbase/modsecurity_crs_21_protocol_anomalies.conf $link/modsecurity_crs_21_protocol_anomalies.conf");	
@@ -132,12 +117,8 @@ class Datasistem extends CI_Model {
 			  shell_exec("sudo ln -s $targetpathbase/modsecurity_crs_59_outbound_blocking.conf $link/modsecurity_crs_59_outbound_blocking.conf");
 			}
 			else{
-<<<<<<< HEAD
-			return shell_exec("sudo ln -s $target $link/$fail");
-		
-=======
+
 			return shell_exec("sudo ln -s " . escapeshellarg($target) . " $link/" . escapeshellarg($fail));
->>>>>>> cf1b681ddf7cec7b14e20f0c1b2c2c4f8421c41e
 			}
 		}
 		
