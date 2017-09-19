@@ -1,3 +1,5 @@
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](viva999@yahoo.com)
+
 ## Rimau Waf 1.0.0 βeta Version 
 
 The purpose of this project is to develops a user interface for **ModSecurity**. Currently this project using Apache and Nginx as a backbone. 
