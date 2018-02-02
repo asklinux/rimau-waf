@@ -1,8 +1,8 @@
 				<div align="center" class="footer-inner">
 					<div class="footer-content">
 						<span class="bigger-10">
-							<span class="blue bolder">Rimau Waf Core </span>
-							 Tunnelbiz GPL V3 &copyleft; 2017  | Uptime :  <?php echo $uptime; ?>
+							<span class="blue bolder">Rimau Waf Enteprice </span>
+							Cloud Application Tunnelbiz GPL V2; 2017 <br/>for Microsoft Azure Cloud | Uptime :  <?php echo $uptime; ?>
 						</span>
 
 						<br /> <br />

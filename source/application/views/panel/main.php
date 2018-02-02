@@ -111,7 +111,15 @@
 					<li class="">
 						<a href="/index.php/panel/mlog">
 							<i class="menu-icon fa fa-exchange"></i>
-							<span class="menu-text"> log </span>
+							<span class="menu-text">Server log </span>
+						</a>
+
+						<b class="arrow"></b>
+					</li>
+					<li class="">
+						<a href="/index.php/panel/attack">
+							<i class="menu-icon fa fa-exchange"></i>
+							<span class="menu-text">Attack Status </span>
 						</a>
 
 						<b class="arrow"></b>

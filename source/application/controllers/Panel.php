@@ -42,8 +42,10 @@ class Panel extends CI_Controller {
 		
 	}
 	function utama(){
-
+			
 			$this->load->view('panel/model/utama');
+			
+			
 
 	}
 	function live_cpu(){
@@ -411,6 +413,49 @@ class Panel extends CI_Controller {
             echo "</pre>";
             
         }
+		
+		function attack(){
+			$file = "/usr/share/rimauwaf/log/modsec_audit.log";
+		
+			
+			if (file_exists($file)) {
+					
+				$fp = fopen( $file, "r" );
+				
+				$i = 0;
+				$error_block = '';
+				while (!feof($fp)) {
+						
+					set_time_limit(0); // for increasing the execution time
+					// do some processing with the line!
+					
+					
+					
+					$line = fgets($fp);//read 1line
+					
+					$error_block .= $line;
+					
+					$flag=preg_match_all("/^--([0-9a-fA-F]{8,})-([Z])--$/", $line);
+			
+					if($flag){
+						
+						$results[] = $this->datasistem->parse_block($error_block);
+						
+						//$error_block = "";
+						//$flag=0;
+					}
+					
+					$i++;
+			}
+				if(!$fp){
+					echo "Couldn't open the data file. Try again later.";
+					exit;
+				}
+			}
+			fclose($fp);
+			$log['attack'] = $results;
+			$this->load->view('panel/model/attack',$log);
+		}
 
 }
 	

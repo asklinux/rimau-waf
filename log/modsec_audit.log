@@ -1,0 +1,1284 @@
+--c38fb137-A--
+[11/Dec/2012:09:19:25 +0700] UMaYLX8AAQEAAA0DAtcAAAAC 192.168.2.129 1039 192.168.2.131 80
+--c38fb137-B--
+GET / HTTP/1.1
+Accept-Encoding: identity
+user-agent: Java/1.6.0_19
+Host: 192.168.2.131
+Accept: text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2
+Connection: keep-alive
+
+--c38fb137-F--
+HTTP/1.1 200 OK
+X-Powered-By: PHP/5.4.6-1ubuntu1
+P3P: CP="NOI ADM DEV PSAi COM NAV OUR OTRo STP IND DEM"
+Cache-Control: no-cache
+Pragma: no-cache
+Vary: Accept-Encoding
+Content-Type: text/html; charset=utf-8
+Set-Cookie: 8c0a8e2264b88cc76451e9364191b62a=p6ebvo0vdgieemjh743ibeghr3; path=/
+Content-Length: 11706
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+
+--c38fb137-E--
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb" lang="en-gb" dir="ltr" >
+	<head>
+		  <base href="http://192.168.2.131/" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="generator" content="Joomla! - Open Source Content Management" />
+  <title>Home</title>
+  <link href="/index.php?format=feed&amp;type=rss" rel="alternate" type="application/rss+xml" title="RSS 2.0" />
+  <link href="/index.php?format=feed&amp;type=atom" rel="alternate" type="application/atom+xml" title="Atom 1.0" />
+  <link href="/templates/beez5/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+  <script src="/media/system/js/mootools-core.js" type="text/javascript"></script>
+  <script src="/media/system/js/core.js" type="text/javascript"></script>
+  <script src="/media/system/js/caption.js" type="text/javascript"></script>
+  <script src="/media/system/js/mootools-more.js" type="text/javascript"></script>
+  <script src="/templates/beez5/javascript/md_stylechanger.js" type="text/javascript" defer="defer"></script>
+  <script type="text/javascript">
+window.addEvent('load', function() {
+				new JCaption('img.caption');
+			});
+function keepAlive() {	var myAjax = new Request({method: "get", url: "index.php"}).send();} window.addEvent("domready", function(){ keepAlive.periodical(840000); });
+  </script>
+
+		<link rel="stylesheet" href="/templates/system/css/system.css" type="text/css" />
+		<link rel="stylesheet" href="/templates/beez5/css/position.css" type="text/css" media="screen,projection" />
+		<link rel="stylesheet" href="/templates/beez5/css/layout.css" type="text/css" media="screen,projection" />
+		<link rel="stylesheet" href="/templates/beez5/css/print.css" type="text/css" media="Print" />
+		<link rel="stylesheet" href="/templates/beez5/css/beez5.css" type="text/css" />
+		<link rel="stylesheet" href="/templates/beez5/css/general.css" type="text/css" />
+				<!--[if lte IE 6]>
+			<link href="/templates/beez5/css/ieonly.css" rel="stylesheet" type="text/css" />
+		<![endif]-->
+		<!--[if IE 7]>
+			<link href="/templates/beez5/css/ie7only.css" rel="stylesheet" type="text/css" />
+		<![endif]-->
+		<script type="text/javascript" src="/templates/beez5/javascript/hide.js"></script>
+
+		<script type="text/javascript">
+			var big ='72%';
+			var small='53%';
+			var altopen='is open';
+			var altclose='is closed';
+			var bildauf='/templates/beez5/images/plus.png';
+			var bildzu='/templates/beez5/images/minus.png';
+			var rightopen='Open info';
+			var rightclose='Close info';
+			var fontSizeTitle='Font size';
+            var bigger='Bigger';
+            var reset='Reset';
+            var smaller='Smaller';
+            var biggerTitle='Increase size';
+            var resetTitle='Revert styles to default';
+            var smallerTitle='Decrease size';
+		</script>
+
+	</head>
+
+	<body>
+
+<div id="all">
+	<div id="back">
+			<div id="header">
+							<div class="logoheader">
+					<h1 id="logo">
+
+																				<span class="header1">
+										</span></h1>
+				</div><!-- end logoheader -->
+
+					<ul class="skiplinks">
+						<li><a href="#main" class="u2">Skip to content</a></li>
+						<li><a href="#nav" class="u2">Jump to main navigation and login</a></li>
+											</ul>
+					<h2 class="unseen">Nav view search</h2>
+					<h3 class="unseen">Navigation</h3>
+					
+					<div id="line">
+					<div id="fontsize"></div>
+					<h3 class="unseen">Search</h3>
+					
+					</div> <!-- end line -->
+		<div id="header-image">
+			
+							<img src="/templates/beez5/images/fruits.jpg"  alt="Logo" />
+					</div>
+					</div><!-- end header -->
+				<div id="contentarea">
+					<div id="breadcrumbs">
+
+							
+<div class="breadcrumbs">
+<span class="showHere">You are here: </span><span>Home</span></div>
+
+
+					</div>
+
+					
+													<div class="left1 leftbigger" id="nav">
+						
+								<div class="moduletable_menu">
+ <h3><span
+	class="backh"><span class="backh2"><span class="backh3">Main Menu</span></span></span></h3>
+ 
+<ul class="menu">
+<li class="item-101 current active"><a href="/" >Home</a></li><li class="item-103"><a href="/index.php/about-us" >About Us</a></li><li class="item-104"><a href="/index.php/contactus" >ContactUs</a></li></ul>
+</div>
+<div class="moduletable">
+ <h3><span
+	class="backh"><span class="backh2"><span class="backh3">Login Form</span></span></span></h3>
+ <form action="/index.php" method="post" id="login-form" >
+		<fieldset class="userdata">
+	<p id="form-login-username">
+		<label for="modlgn-username">User Name</label>
+		<input id="modlgn-username" type="text" name="username" class="inputbox"  size="18" />
+	</p>
+	<p id="form-login-password">
+		<label for="modlgn-passwd">Password</label>
+		<input id="modlgn-passwd" type="password" name="password" class="inputbox" size="18"  />
+	</p>
+		<p id="form-login-remember">
+		<label for="modlgn-remember">Remember Me</label>
+		<input id="modlgn-remember" type="checkbox" name="remember" class="inputbox" value="yes"/>
+	</p>
+		<input type="submit" name="Submit" class="button" value="Log in" />
+	<input type="hidden" name="option" value="com_users" />
+	<input type="hidden" name="task" value="user.login" />
+	<input type="hidden" name="return" value="aW5kZXgucGhwP0l0ZW1pZD0xMDE=" />
+	<input type="hidden" name="4310ef2058c2d12c6e06f3e6a1020119" value="1" />	</fieldset>
+	<ul>
+		<li>
+			<a href="/index.php/component/users/?view=reset">
+			Forgot your password?</a>
+		</li>
+		<li>
+			<a href="/index.php/component/users/?view=remind">
+			Forgot your username?</a>
+		</li>
+				<li>
+			<a href="/index.php/component/users/?view=registration">
+				Create an account</a>
+		</li>
+			</ul>
+	</form>
+</div>
+
+								
+								
+
+													</div><!-- end navi -->
+						
+					
+					<div id="wrapper2" >
+
+						<div id="main">
+
+						
+							
+<div id="system-message-container">
+</div>
+							<div class="blog-featured">
+	<h1>
+	Home	</h1>
+
+<div class="items-leading">
+			<div class="leading-0">
+			
+	<h2>
+					<a href="/index.php/9-news/5-you-can-find-an-article-about-how-to-install-mod-security-here">
+			You can find an article about how to install mod security here</a>
+			</h2>
+
+	<ul class="actions">
+				<li class="print-icon">
+			<a href="/index.php/9-news/5-you-can-find-an-article-about-how-to-install-mod-security-here?tmpl=component&amp;print=1&amp;page=" title="Print" onclick="window.open(this.href,'win2','status=no,toolbar=no,scrollbars=yes,titlebar=no,menubar=no,resizable=yes,width=640,height=480,directories=no,location=no'); return false;" rel="nofollow"><img src="/media/system/images/printButton.png" alt="Print"  /></a>		</li>
+						<li class="email-icon">
+			<a href="/index.php/component/mailto/?tmpl=component&amp;template=beez5&amp;link=01905488ae6f7a8e81b3f7fe4525fd998a39192b" title="Email" onclick="window.open(this.href,'win2','width=400,height=350,menubar=yes,resizable=yes'); return false;"><img src="/media/system/images/emailButton.png" alt="Email"  /></a>		</li>
+		
+			</ul>
+
+
+
+
+ <dl class="article-info">
+ <dt class="article-info-term">Details</dt>
+		<dd class="category-name">
+										Category: <a href="/index.php/9-news">News</a>						</dd>
+		<dd class="published">
+		Published on Monday, 10 December 2012 09:17		</dd>
+	<dd class="createdby">
+				
+							Written by Super User				</dd>
+		<dd class="hits">
+		Hits: 5		</dd>
+ </dl>
+
+
+<h5>How To Install Mod_Security On Apache(Ubuntu 12.10) Step By Step Tutorial For Beginners</h5>
+
+<p><a href="http://goo.gl/HKXNP" target="_blank">http://goo.gl/HKXNP</a></p>
+
+<p><img src="/images/how_to_install_mod_security_on_ubuntu64bit_12.04_apache_setpbysetp_guide_root25.com.jpg" border="0" alt="" width="398" height="298" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+
+
+<div class="item-separator"></div>
+		</div>
+					<div class="leading-1">
+			
+	<h2>
+					<a href="/index.php/9-news/2-utm-universiti-teknologi-malysia">
+			UTM Universiti Teknologi Malysia</a>
+			</h2>
+
+	<ul class="actions">
+				<li class="print-icon">
+			<a href="/index.php/9-news/2-utm-universiti-teknologi-malysia?tmpl=component&amp;print=1&amp;page=" title="Print" onclick="window.open(this.href,'win2','status=no,toolbar=no,scrollbars=yes,titlebar=no,menubar=no,resizable=yes,width=640,height=480,directories=no,location=no'); return false;" rel="nofollow"><img src="/media/system/images/printButton.png" alt="Print"  /></a>		</li>
+						<li class="email-icon">
+			<a href="/index.php/component/mailto/?tmpl=component&amp;template=beez5&amp;link=60446a553e35ffc3c514fa46fc513883177b9ff0" title="Email" onclick="window.open(this.href,'win2','width=400,height=350,menubar=yes,resizable=yes'); return false;"><img src="/media/system/images/emailButton.png" alt="Email"  /></a>		</li>
+		
+			</ul>
+
+
+
+
+ <dl class="article-info">
+ <dt class="article-info-term">Details</dt>
+		<dd class="category-name">
+										Category: <a href="/index.php/9-news">News</a>						</dd>
+		<dd class="published">
+		Published on Monday, 10 December 2012 08:18		</dd>
+	<dd class="createdby">
+				
+							Written by Super User				</dd>
+		<dd class="hits">
+		Hits: 0		</dd>
+ </dl>
+
+
+<h3 style="text-align: center;"><img src="/images/UTM LOGO brand .jpg" border="0" alt="" width="391" height="128" /></h3>
+
+<h3>Universiti Teknologi Malaysia (UTM), an innovation-led and graduate-focused Research University. It is located both in Kuala Lumpur, the capital city of Malaysia and Johor Bahru, the southern city in Iskandar Malaysia, which is a vibrant economic corridor in the south of Peninsular Malaysia.</h3>
+
+
+<div class="item-separator"></div>
+		</div>
+					<div class="leading-2">
+			
+	<h2>
+					<a href="/index.php/9-news/1-welcome-to-my-test-website">
+			Welcome To My Test Website</a>
+			</h2>
+
+	<ul class="actions">
+				<li class="print-icon">
+			<a href="/index.php/9-news/1-welcome-to-my-test-website?tmpl=component&amp;print=1&amp;page=" title="Print" onclick="window.open(this.href,'win2','status=no,toolbar=no,scrollbars=yes,titlebar=no,menubar=no,resizable=yes,width=640,height=480,directories=no,location=no'); return false;" rel="nofollow"><img src="/media/system/images/printButton.png" alt="Print"  /></a>		</li>
+						<li class="email-icon">
+			<a href="/index.php/component/mailto/?tmpl=component&amp;template=beez5&amp;link=b9b8e455aa21fcc91ea6de0ea429355305ccf848" title="Email" onclick="window.open(this.href,'win2','width=400,height=350,menubar=yes,resizable=yes'); return false;"><img src="/media/system/images/emailButton.png" alt="Email"  /></a>		</li>
+		
+			</ul>
+
+
+
+
+ <dl class="article-info">
+ <dt class="article-info-term">Details</dt>
+		<dd class="category-name">
+										Category: <a href="/index.php/9-news">News</a>						</dd>
+		<dd class="published">
+		Published on Monday, 10 December 2012 08:04		</dd>
+	<dd class="createdby">
+				
+							Written by Super User				</dd>
+		<dd class="hits">
+		Hits: 0		</dd>
+ </dl>
+
+
+<p><img src="/images/powered_by.png" border="0" alt="" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+
+<h1>Welcome to our website, This website made by Joomla core based on our ubuntu server to test ModSecurity!</h1>
+
+
+<div class="item-separator"></div>
+		</div>
+			</div>
+
+
+
+</div>
+
+
+						</div><!-- end main -->
+
+					</div><!-- end wrapper -->
+
+				
+			
+					<div class="wrap"></div>
+
+				</div> <!-- end contentarea -->
+
+			</div><!-- back -->
+
+		</div><!-- all -->
+
+		<div id="footer-outer">
+
+		
+			<div id="footer-sub">
+
+							<div id="footer">
+			
+					
+					<p>
+						Powered by <a href="http://www.joomla.org/">Joomla!&#174;</a>
+					</p>
+
+							</div><!-- end footer -->
+			
+			</div>
+
+		</div>
+		
+	</body>
+</html>
+
+--c38fb137-H--
+Message: Warning. Pattern match "(.*?)=(?i)(?!.*httponly.*)(.*$)" at RESPONSE_HEADERS:Set-Cookie. [file "/etc/modsecurity/activated_rules/modsecurity_crs_55_application_defects.conf"] [line "83"] [id "981184"] [msg "AppDefect: Missing HttpOnly Cookie Flag for 8c0a8e2264b88cc76451e9364191b62a."] [tag "WASCTC/WASC-15"] [tag "MISCONFIGURATION"] [tag "http://websecuritytool.codeplex.com/wikipage?title=Checks#cookie-not-setting-httponly-flag"]
+Message: Warning. Match of "contains no-store" against "RESPONSE_HEADERS:Cache-Control" required. [file "/etc/modsecurity/activated_rules/modsecurity_crs_55_application_defects.conf"] [line "121"] [id "981240"] [msg "AppDefect: Cache-Control Response Header Missing 'no-store' flag."] [data "Cache-Control: no-cache"] [tag "WASCTC/WASC-15"] [tag "MISCONFIGURATION"] [tag "http://websecuritytool.codeplex.com/wikipage?title=Checks#http-cache-control-header-no-store"]
+Message: Warning. Pattern match "^(?i:0|allow)$" at RESPONSE_HEADERS. [file "/etc/modsecurity/activated_rules/modsecurity_crs_55_application_defects.conf"] [line "151"] [id "981405"] [msg "AppDefect: X-FRAME-OPTIONS Response Header is Missing or not set to Deny."] [data "X-FRAME-OPTIONS: "] [tag "WASCTC/WASC-15"] [tag "MISCONFIGURATION"] [tag "http://websecuritytool.codeplex.com/wikipage?title=Checks#http-header-x-frame-options"]
+Message: Warning. Operator LT matched 5 at TX:inbound_anomaly_score. [file "/etc/modsecurity/activated_rules/modsecurity_crs_60_correlation.conf"] [line "33"] [id "981203"] [msg "Inbound Anomaly Score (Total Inbound Score: 3, SQLi=, XSS=): Common SPAM/Email Harvester crawler"]
+Apache-Handler: proxy-server
+Stopwatch: 1355192365348193 110461 (- - -)
+Stopwatch2: 1355192365348193 110461; combined=6222, p1=317, p2=2062, p3=72, p4=3200, p5=509, sr=137, sw=62, l=0, gc=0
+Response-Body-Transformed: Dechunked
+Producer: ModSecurity for Apache/2.6.6 (http://www.modsecurity.org/); OWASP_CRS/2.2.5.
+Server: Apache/2.2.22 (Ubuntu)
+
+--c38fb137-Z--
+
+--c38fb137-A--
+[11/Dec/2012:09:19:25 +0700] UMaYLX8AAQEAAA0DAtgAAAAC 192.168.2.129 1039 192.168.2.131 80
+--c38fb137-B--
+GET / HTTP/1.1
+Accept-Encoding: identity
+user-agent: Java/1.6.0_19
+Host: 192.168.2.131
+Accept: text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2
+Connection: keep-alive
+
+--c38fb137-F--
+HTTP/1.1 200 OK
+X-Powered-By: PHP/5.4.6-1ubuntu1
+P3P: CP="NOI ADM DEV PSAi COM NAV OUR OTRo STP IND DEM"
+Cache-Control: no-cache
+Pragma: no-cache
+Vary: Accept-Encoding
+Content-Type: text/html; charset=utf-8
+Set-Cookie: 8c0a8e2264b88cc76451e9364191b62a=ven8nbl1vm4ai0ot10p2l8i7i7; path=/
+Content-Length: 11706
+Keep-Alive: timeout=5, max=99
+Connection: Keep-Alive
+
+--c38fb137-E--
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb" lang="en-gb" dir="ltr" >
+	<head>
+		  <base href="http://192.168.2.131/" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="generator" content="Joomla! - Open Source Content Management" />
+  <title>Home</title>
+  <link href="/index.php?format=feed&amp;type=rss" rel="alternate" type="application/rss+xml" title="RSS 2.0" />
+  <link href="/index.php?format=feed&amp;type=atom" rel="alternate" type="application/atom+xml" title="Atom 1.0" />
+  <link href="/templates/beez5/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+  <script src="/media/system/js/mootools-core.js" type="text/javascript"></script>
+  <script src="/media/system/js/core.js" type="text/javascript"></script>
+  <script src="/media/system/js/caption.js" type="text/javascript"></script>
+  <script src="/media/system/js/mootools-more.js" type="text/javascript"></script>
+  <script src="/templates/beez5/javascript/md_stylechanger.js" type="text/javascript" defer="defer"></script>
+  <script type="text/javascript">
+window.addEvent('load', function() {
+				new JCaption('img.caption');
+			});
+function keepAlive() {	var myAjax = new Request({method: "get", url: "index.php"}).send();} window.addEvent("domready", function(){ keepAlive.periodical(840000); });
+  </script>
+
+		<link rel="stylesheet" href="/templates/system/css/system.css" type="text/css" />
+		<link rel="stylesheet" href="/templates/beez5/css/position.css" type="text/css" media="screen,projection" />
+		<link rel="stylesheet" href="/templates/beez5/css/layout.css" type="text/css" media="screen,projection" />
+		<link rel="stylesheet" href="/templates/beez5/css/print.css" type="text/css" media="Print" />
+		<link rel="stylesheet" href="/templates/beez5/css/beez5.css" type="text/css" />
+		<link rel="stylesheet" href="/templates/beez5/css/general.css" type="text/css" />
+				<!--[if lte IE 6]>
+			<link href="/templates/beez5/css/ieonly.css" rel="stylesheet" type="text/css" />
+		<![endif]-->
+		<!--[if IE 7]>
+			<link href="/templates/beez5/css/ie7only.css" rel="stylesheet" type="text/css" />
+		<![endif]-->
+		<script type="text/javascript" src="/templates/beez5/javascript/hide.js"></script>
+
+		<script type="text/javascript">
+			var big ='72%';
+			var small='53%';
+			var altopen='is open';
+			var altclose='is closed';
+			var bildauf='/templates/beez5/images/plus.png';
+			var bildzu='/templates/beez5/images/minus.png';
+			var rightopen='Open info';
+			var rightclose='Close info';
+			var fontSizeTitle='Font size';
+            var bigger='Bigger';
+            var reset='Reset';
+            var smaller='Smaller';
+            var biggerTitle='Increase size';
+            var resetTitle='Revert styles to default';
+            var smallerTitle='Decrease size';
+		</script>
+
+	</head>
+
+	<body>
+
+<div id="all">
+	<div id="back">
+			<div id="header">
+							<div class="logoheader">
+					<h1 id="logo">
+
+																				<span class="header1">
+										</span></h1>
+				</div><!-- end logoheader -->
+
+					<ul class="skiplinks">
+						<li><a href="#main" class="u2">Skip to content</a></li>
+						<li><a href="#nav" class="u2">Jump to main navigation and login</a></li>
+											</ul>
+					<h2 class="unseen">Nav view search</h2>
+					<h3 class="unseen">Navigation</h3>
+					
+					<div id="line">
+					<div id="fontsize"></div>
+					<h3 class="unseen">Search</h3>
+					
+					</div> <!-- end line -->
+		<div id="header-image">
+			
+							<img src="/templates/beez5/images/fruits.jpg"  alt="Logo" />
+					</div>
+					</div><!-- end header -->
+				<div id="contentarea">
+					<div id="breadcrumbs">
+
+							
+<div class="breadcrumbs">
+<span class="showHere">You are here: </span><span>Home</span></div>
+
+
+					</div>
+
+					
+													<div class="left1 leftbigger" id="nav">
+						
+								<div class="moduletable_menu">
+ <h3><span
+	class="backh"><span class="backh2"><span class="backh3">Main Menu</span></span></span></h3>
+ 
+<ul class="menu">
+<li class="item-101 current active"><a href="/" >Home</a></li><li class="item-103"><a href="/index.php/about-us" >About Us</a></li><li class="item-104"><a href="/index.php/contactus" >ContactUs</a></li></ul>
+</div>
+<div class="moduletable">
+ <h3><span
+	class="backh"><span class="backh2"><span class="backh3">Login Form</span></span></span></h3>
+ <form action="/index.php" method="post" id="login-form" >
+		<fieldset class="userdata">
+	<p id="form-login-username">
+		<label for="modlgn-username">User Name</label>
+		<input id="modlgn-username" type="text" name="username" class="inputbox"  size="18" />
+	</p>
+	<p id="form-login-password">
+		<label for="modlgn-passwd">Password</label>
+		<input id="modlgn-passwd" type="password" name="password" class="inputbox" size="18"  />
+	</p>
+		<p id="form-login-remember">
+		<label for="modlgn-remember">Remember Me</label>
+		<input id="modlgn-remember" type="checkbox" name="remember" class="inputbox" value="yes"/>
+	</p>
+		<input type="submit" name="Submit" class="button" value="Log in" />
+	<input type="hidden" name="option" value="com_users" />
+	<input type="hidden" name="task" value="user.login" />
+	<input type="hidden" name="return" value="aW5kZXgucGhwP0l0ZW1pZD0xMDE=" />
+	<input type="hidden" name="5227f78dd7fa14e1427844dc7f869c76" value="1" />	</fieldset>
+	<ul>
+		<li>
+			<a href="/index.php/component/users/?view=reset">
+			Forgot your password?</a>
+		</li>
+		<li>
+			<a href="/index.php/component/users/?view=remind">
+			Forgot your username?</a>
+		</li>
+				<li>
+			<a href="/index.php/component/users/?view=registration">
+				Create an account</a>
+		</li>
+			</ul>
+	</form>
+</div>
+
+								
+								
+
+													</div><!-- end navi -->
+						
+					
+					<div id="wrapper2" >
+
+						<div id="main">
+
+						
+							
+<div id="system-message-container">
+</div>
+							<div class="blog-featured">
+	<h1>
+	Home	</h1>
+
+<div class="items-leading">
+			<div class="leading-0">
+			
+	<h2>
+					<a href="/index.php/9-news/5-you-can-find-an-article-about-how-to-install-mod-security-here">
+			You can find an article about how to install mod security here</a>
+			</h2>
+
+	<ul class="actions">
+				<li class="print-icon">
+			<a href="/index.php/9-news/5-you-can-find-an-article-about-how-to-install-mod-security-here?tmpl=component&amp;print=1&amp;page=" title="Print" onclick="window.open(this.href,'win2','status=no,toolbar=no,scrollbars=yes,titlebar=no,menubar=no,resizable=yes,width=640,height=480,directories=no,location=no'); return false;" rel="nofollow"><img src="/media/system/images/printButton.png" alt="Print"  /></a>		</li>
+						<li class="email-icon">
+			<a href="/index.php/component/mailto/?tmpl=component&amp;template=beez5&amp;link=01905488ae6f7a8e81b3f7fe4525fd998a39192b" title="Email" onclick="window.open(this.href,'win2','width=400,height=350,menubar=yes,resizable=yes'); return false;"><img src="/media/system/images/emailButton.png" alt="Email"  /></a>		</li>
+		
+			</ul>
+
+
+
+
+ <dl class="article-info">
+ <dt class="article-info-term">Details</dt>
+		<dd class="category-name">
+										Category: <a href="/index.php/9-news">News</a>						</dd>
+		<dd class="published">
+		Published on Monday, 10 December 2012 09:17		</dd>
+	<dd class="createdby">
+				
+							Written by Super User				</dd>
+		<dd class="hits">
+		Hits: 5		</dd>
+ </dl>
+
+
+<h5>How To Install Mod_Security On Apache(Ubuntu 12.10) Step By Step Tutorial For Beginners</h5>
+
+<p><a href="http://goo.gl/HKXNP" target="_blank">http://goo.gl/HKXNP</a></p>
+
+<p><img src="/images/how_to_install_mod_security_on_ubuntu64bit_12.04_apache_setpbysetp_guide_root25.com.jpg" border="0" alt="" width="398" height="298" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+
+
+<div class="item-separator"></div>
+		</div>
+					<div class="leading-1">
+			
+	<h2>
+					<a href="/index.php/9-news/2-utm-universiti-teknologi-malysia">
+			UTM Universiti Teknologi Malysia</a>
+			</h2>
+
+	<ul class="actions">
+				<li class="print-icon">
+			<a href="/index.php/9-news/2-utm-universiti-teknologi-malysia?tmpl=component&amp;print=1&amp;page=" title="Print" onclick="window.open(this.href,'win2','status=no,toolbar=no,scrollbars=yes,titlebar=no,menubar=no,resizable=yes,width=640,height=480,directories=no,location=no'); return false;" rel="nofollow"><img src="/media/system/images/printButton.png" alt="Print"  /></a>		</li>
+						<li class="email-icon">
+			<a href="/index.php/component/mailto/?tmpl=component&amp;template=beez5&amp;link=60446a553e35ffc3c514fa46fc513883177b9ff0" title="Email" onclick="window.open(this.href,'win2','width=400,height=350,menubar=yes,resizable=yes'); return false;"><img src="/media/system/images/emailButton.png" alt="Email"  /></a>		</li>
+		
+			</ul>
+
+
+
+
+ <dl class="article-info">
+ <dt class="article-info-term">Details</dt>
+		<dd class="category-name">
+										Category: <a href="/index.php/9-news">News</a>						</dd>
+		<dd class="published">
+		Published on Monday, 10 December 2012 08:18		</dd>
+	<dd class="createdby">
+				
+							Written by Super User				</dd>
+		<dd class="hits">
+		Hits: 0		</dd>
+ </dl>
+
+
+<h3 style="text-align: center;"><img src="/images/UTM LOGO brand .jpg" border="0" alt="" width="391" height="128" /></h3>
+
+<h3>Universiti Teknologi Malaysia (UTM), an innovation-led and graduate-focused Research University. It is located both in Kuala Lumpur, the capital city of Malaysia and Johor Bahru, the southern city in Iskandar Malaysia, which is a vibrant economic corridor in the south of Peninsular Malaysia.</h3>
+
+
+<div class="item-separator"></div>
+		</div>
+					<div class="leading-2">
+			
+	<h2>
+					<a href="/index.php/9-news/1-welcome-to-my-test-website">
+			Welcome To My Test Website</a>
+			</h2>
+
+	<ul class="actions">
+				<li class="print-icon">
+			<a href="/index.php/9-news/1-welcome-to-my-test-website?tmpl=component&amp;print=1&amp;page=" title="Print" onclick="window.open(this.href,'win2','status=no,toolbar=no,scrollbars=yes,titlebar=no,menubar=no,resizable=yes,width=640,height=480,directories=no,location=no'); return false;" rel="nofollow"><img src="/media/system/images/printButton.png" alt="Print"  /></a>		</li>
+						<li class="email-icon">
+			<a href="/index.php/component/mailto/?tmpl=component&amp;template=beez5&amp;link=b9b8e455aa21fcc91ea6de0ea429355305ccf848" title="Email" onclick="window.open(this.href,'win2','width=400,height=350,menubar=yes,resizable=yes'); return false;"><img src="/media/system/images/emailButton.png" alt="Email"  /></a>		</li>
+		
+			</ul>
+
+
+
+
+ <dl class="article-info">
+ <dt class="article-info-term">Details</dt>
+		<dd class="category-name">
+										Category: <a href="/index.php/9-news">News</a>						</dd>
+		<dd class="published">
+		Published on Monday, 10 December 2012 08:04		</dd>
+	<dd class="createdby">
+				
+							Written by Super User				</dd>
+		<dd class="hits">
+		Hits: 0		</dd>
+ </dl>
+
+
+<p><img src="/images/powered_by.png" border="0" alt="" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+
+<h1>Welcome to our website, This website made by Joomla core based on our ubuntu server to test ModSecurity!</h1>
+
+
+<div class="item-separator"></div>
+		</div>
+			</div>
+
+
+
+</div>
+
+
+						</div><!-- end main -->
+
+					</div><!-- end wrapper -->
+
+				
+			
+					<div class="wrap"></div>
+
+				</div> <!-- end contentarea -->
+
+			</div><!-- back -->
+
+		</div><!-- all -->
+
+		<div id="footer-outer">
+
+		
+			<div id="footer-sub">
+
+							<div id="footer">
+			
+					
+					<p>
+						Powered by <a href="http://www.joomla.org/">Joomla!&#174;</a>
+					</p>
+
+							</div><!-- end footer -->
+			
+			</div>
+
+		</div>
+		
+	</body>
+</html>
+
+--c38fb137-H--
+Message: Warning. Pattern match "(.*?)=(?i)(?!.*httponly.*)(.*$)" at RESPONSE_HEADERS:Set-Cookie. [file "/etc/modsecurity/activated_rules/modsecurity_crs_55_application_defects.conf"] [line "83"] [id "981184"] [msg "AppDefect: Missing HttpOnly Cookie Flag for 8c0a8e2264b88cc76451e9364191b62a."] [tag "WASCTC/WASC-15"] [tag "MISCONFIGURATION"] [tag "http://websecuritytool.codeplex.com/wikipage?title=Checks#cookie-not-setting-httponly-flag"]
+Message: Warning. Match of "contains no-store" against "RESPONSE_HEADERS:Cache-Control" required. [file "/etc/modsecurity/activated_rules/modsecurity_crs_55_application_defects.conf"] [line "121"] [id "981240"] [msg "AppDefect: Cache-Control Response Header Missing 'no-store' flag."] [data "Cache-Control: no-cache"] [tag "WASCTC/WASC-15"] [tag "MISCONFIGURATION"] [tag "http://websecuritytool.codeplex.com/wikipage?title=Checks#http-cache-control-header-no-store"]
+Message: Warning. Pattern match "^(?i:0|allow)$" at RESPONSE_HEADERS. [file "/etc/modsecurity/activated_rules/modsecurity_crs_55_application_defects.conf"] [line "151"] [id "981405"] [msg "AppDefect: X-FRAME-OPTIONS Response Header is Missing or not set to Deny."] [data "X-FRAME-OPTIONS: "] [tag "WASCTC/WASC-15"] [tag "MISCONFIGURATION"] [tag "http://websecuritytool.codeplex.com/wikipage?title=Checks#http-header-x-frame-options"]
+Message: Warning. Operator LT matched 5 at TX:inbound_anomaly_score. [file "/etc/modsecurity/activated_rules/modsecurity_crs_60_correlation.conf"] [line "33"] [id "981203"] [msg "Inbound Anomaly Score (Total Inbound Score: 3, SQLi=, XSS=): Common SPAM/Email Harvester crawler"]
+Apache-Handler: proxy-server
+Stopwatch: 1355192365520881 85023 (- - -)
+Stopwatch2: 1355192365520881 85023; combined=5903, p1=182, p2=1793, p3=77, p4=3307, p5=491, sr=73, sw=53, l=0, gc=0
+Response-Body-Transformed: Dechunked
+Producer: ModSecurity for Apache/2.6.6 (http://www.modsecurity.org/); OWASP_CRS/2.2.5.
+Server: Apache/2.2.22 (Ubuntu)
+
+--c38fb137-Z--
+
+--78080b45-A--
+[11/Dec/2012:09:30:08 +0700] UMaasH8AAQEAAA0EA4AAAAAD 192.168.2.134 51235 192.168.2.131 80
+--78080b45-B--
+GET / HTTP/1.1
+Host: 192.168.2.131
+Accept-encoding: gzip
+Accept: */*
+User-agent: w3af.sourceforge.net
+
+--78080b45-F--
+HTTP/1.1 403 Forbidden
+Vary: Accept-Encoding
+Content-Encoding: gzip
+Content-Length: 233
+Content-Type: text/html; charset=iso-8859-1
+
+--78080b45-E--
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>403 Forbidden</title>
+</head><body>
+<h1>Forbidden</h1>
+<p>You don't have permission to access /
+on this server.</p>
+<hr>
+<address>Apache/2.2.22 (Ubuntu) Server at 192.168.2.131 Port 80</address>
+</body></html>
+
+--78080b45-H--
+Message: Access denied with code 403 (phase 2). Matched phrase "w3af" at REQUEST_HEADERS:User-agent. [file "/etc/modsecurity/activated_rules/modsecurity_crs_35_bad_robots.conf"] [line "20"] [id "990002"] [rev "2.2.5"] [msg "Request Indicates a Security Scanner Scanned the Site"] [severity "WARNING"] [tag "AUTOMATION/SECURITY_SCANNER"] [tag "WASCTC/WASC-21"] [tag "OWASP_TOP_10/A7"] [tag "PCI/6.5.10"]
+Action: Intercepted (phase 2)
+Apache-Handler: proxy-server
+Stopwatch: 1355193008184112 240455 (- - -)
+Stopwatch2: 1355193008184112 240455; combined=237456, p1=236069, p2=419, p3=0, p4=0, p5=594, sr=128, sw=374, l=0, gc=0
+Response-Body-Transformed: Dechunked
+Producer: ModSecurity for Apache/2.6.6 (http://www.modsecurity.org/); OWASP_CRS/2.2.5.
+Server: Apache/2.2.22 (Ubuntu)
+
+--78080b45-Z--
+
+--78080b45-A--
+[11/Dec/2012:09:30:08 +0700] UMaasH8AAQEAAA0EA4EAAAAD 192.168.2.134 51235 192.168.2.131 80
+--78080b45-B--
+GET /YVHGZbly. HTTP/1.1
+Host: 192.168.2.131
+Accept-encoding: gzip
+Accept: */*
+User-agent: w3af.sourceforge.net
+
+--78080b45-F--
+HTTP/1.1 403 Forbidden
+Vary: Accept-Encoding
+Content-Encoding: gzip
+Content-Length: 241
+Content-Type: text/html; charset=iso-8859-1
+
+--78080b45-E--
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>403 Forbidden</title>
+</head><body>
+<h1>Forbidden</h1>
+<p>You don't have permission to access /YVHGZbly.
+on this server.</p>
+<hr>
+<address>Apache/2.2.22 (Ubuntu) Server at 192.168.2.131 Port 80</address>
+</body></html>
+
+--78080b45-H--
+Message: Access denied with code 403 (phase 2). Matched phrase "w3af" at REQUEST_HEADERS:User-agent. [file "/etc/modsecurity/activated_rules/modsecurity_crs_35_bad_robots.conf"] [line "20"] [id "990002"] [rev "2.2.5"] [msg "Request Indicates a Security Scanner Scanned the Site"] [severity "WARNING"] [tag "AUTOMATION/SECURITY_SCANNER"] [tag "WASCTC/WASC-21"] [tag "OWASP_TOP_10/A7"] [tag "PCI/6.5.10"]
+Action: Intercepted (phase 2)
+Apache-Handler: proxy-server
+Stopwatch: 1355193008758537 1116 (- - -)
+Stopwatch2: 1355193008758537 1116; combined=398, p1=168, p2=144, p3=0, p4=0, p5=86, sr=68, sw=0, l=0, gc=0
+Response-Body-Transformed: Dechunked
+Producer: ModSecurity for Apache/2.6.6 (http://www.modsecurity.org/); OWASP_CRS/2.2.5.
+Server: Apache/2.2.22 (Ubuntu)
+
+--78080b45-Z--
+
+--78080b45-A--
+[11/Dec/2012:09:30:08 +0700] UMaasH8AAQEAAA0FBBEAAAAE 192.168.2.134 51242 192.168.2.131 80
+--78080b45-B--
+GET /W85gfU6Z.jsp HTTP/1.1
+Host: 192.168.2.131
+Accept-encoding: gzip
+Accept: */*
+User-agent: w3af.sourceforge.net
+
+--78080b45-F--
+HTTP/1.1 403 Forbidden
+Vary: Accept-Encoding
+Content-Encoding: gzip
+Content-Length: 245
+Content-Type: text/html; charset=iso-8859-1
+
+--78080b45-E--
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>403 Forbidden</title>
+</head><body>
+<h1>Forbidden</h1>
+<p>You don't have permission to access /W85gfU6Z.jsp
+on this server.</p>
+<hr>
+<address>Apache/2.2.22 (Ubuntu) Server at 192.168.2.131 Port 80</address>
+</body></html>
+
+--78080b45-H--
+Message: Access denied with code 403 (phase 2). Matched phrase "w3af" at REQUEST_HEADERS:User-agent. [file "/etc/modsecurity/activated_rules/modsecurity_crs_35_bad_robots.conf"] [line "20"] [id "990002"] [rev "2.2.5"] [msg "Request Indicates a Security Scanner Scanned the Site"] [severity "WARNING"] [tag "AUTOMATION/SECURITY_SCANNER"] [tag "WASCTC/WASC-21"] [tag "OWASP_TOP_10/A7"] [tag "PCI/6.5.10"]
+Action: Intercepted (phase 2)
+Apache-Handler: proxy-server
+Stopwatch: 1355193008766309 2814 (- - -)
+Stopwatch2: 1355193008766309 2814; combined=818, p1=329, p2=402, p3=0, p4=0, p5=87, sr=63, sw=0, l=0, gc=0
+Response-Body-Transformed: Dechunked
+Producer: ModSecurity for Apache/2.6.6 (http://www.modsecurity.org/); OWASP_CRS/2.2.5.
+Server: Apache/2.2.22 (Ubuntu)
+
+--78080b45-Z--
+
+--78080b45-A--
+[11/Dec/2012:09:30:08 +0700] UMaasH8AAQEAAA0CAosAAAAB 192.168.2.134 51243 192.168.2.131 80
+--78080b45-B--
+GET /mIMRMUgN.rb HTTP/1.1
+Host: 192.168.2.131
+Accept-encoding: gzip
+Accept: */*
+User-agent: w3af.sourceforge.net
+
+--78080b45-F--
+HTTP/1.1 403 Forbidden
+Vary: Accept-Encoding
+Content-Encoding: gzip
+Content-Length: 243
+Content-Type: text/html; charset=iso-8859-1
+
+--78080b45-E--
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>403 Forbidden</title>
+</head><body>
+<h1>Forbidden</h1>
+<p>You don't have permission to access /mIMRMUgN.rb
+on this server.</p>
+<hr>
+<address>Apache/2.2.22 (Ubuntu) Server at 192.168.2.131 Port 80</address>
+</body></html>
+
+--78080b45-H--
+Message: Access denied with code 403 (phase 2). Matched phrase "w3af" at REQUEST_HEADERS:User-agent. [file "/etc/modsecurity/activated_rules/modsecurity_crs_35_bad_robots.conf"] [line "20"] [id "990002"] [rev "2.2.5"] [msg "Request Indicates a Security Scanner Scanned the Site"] [severity "WARNING"] [tag "AUTOMATION/SECURITY_SCANNER"] [tag "WASCTC/WASC-21"] [tag "OWASP_TOP_10/A7"] [tag "PCI/6.5.10"]
+Action: Intercepted (phase 2)
+Apache-Handler: proxy-server
+Stopwatch: 1355193008769564 1868 (- - -)
+Stopwatch2: 1355193008769564 1868; combined=419, p1=196, p2=142, p3=0, p4=0, p5=81, sr=75, sw=0, l=0, gc=0
+Response-Body-Transformed: Dechunked
+Producer: ModSecurity for Apache/2.6.6 (http://www.modsecurity.org/); OWASP_CRS/2.2.5.
+Server: Apache/2.2.22 (Ubuntu)
+
+--78080b45-Z--
+
+--78080b45-A--
+[11/Dec/2012:09:30:08 +0700] UMaasH8AAQEAAA0ICuQAAAAF 192.168.2.134 51245 192.168.2.131 80
+--78080b45-B--
+GET /yfYHbq6H.php HTTP/1.1
+Host: 192.168.2.131
+Accept-encoding: gzip
+Accept: */*
+User-agent: w3af.sourceforge.net
+
+--78080b45-F--
+HTTP/1.1 403 Forbidden
+Vary: Accept-Encoding
+Content-Encoding: gzip
+Content-Length: 244
+Content-Type: text/html; charset=iso-8859-1
+
+--78080b45-E--
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>403 Forbidden</title>
+</head><body>
+<h1>Forbidden</h1>
+<p>You don't have permission to access /yfYHbq6H.php
+on this server.</p>
+<hr>
+<address>Apache/2.2.22 (Ubuntu) Server at 192.168.2.131 Port 80</address>
+</body></html>
+
+--78080b45-H--
+Message: Access denied with code 403 (phase 2). Matched phrase "w3af" at REQUEST_HEADERS:User-agent. [file "/etc/modsecurity/activated_rules/modsecurity_crs_35_bad_robots.conf"] [line "20"] [id "990002"] [rev "2.2.5"] [msg "Request Indicates a Security Scanner Scanned the Site"] [severity "WARNING"] [tag "AUTOMATION/SECURITY_SCANNER"] [tag "WASCTC/WASC-21"] [tag "OWASP_TOP_10/A7"] [tag "PCI/6.5.10"]
+Action: Intercepted (phase 2)
+Apache-Handler: proxy-server
+Stopwatch: 1355193008771951 1409 (- - -)
+Stopwatch2: 1355193008771951 1409; combined=419, p1=211, p2=136, p3=0, p4=0, p5=72, sr=69, sw=0, l=0, gc=0
+Response-Body-Transformed: Dechunked
+Producer: ModSecurity for Apache/2.6.6 (http://www.modsecurity.org/); OWASP_CRS/2.2.5.
+Server: Apache/2.2.22 (Ubuntu)
+
+--78080b45-Z--
+
+--78080b45-A--
+[11/Dec/2012:09:30:08 +0700] UMaasH8AAQEAAA0BA9EAAAAA 192.168.2.134 51239 192.168.2.131 80
+--78080b45-B--
+GET /ygN8yWfK.py HTTP/1.1
+Host: 192.168.2.131
+Accept-encoding: gzip
+Accept: */*
+User-agent: w3af.sourceforge.net
+
+--78080b45-F--
+HTTP/1.1 403 Forbidden
+Vary: Accept-Encoding
+Content-Encoding: gzip
+Content-Length: 243
+Content-Type: text/html; charset=iso-8859-1
+
+--78080b45-E--
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>403 Forbidden</title>
+</head><body>
+<h1>Forbidden</h1>
+<p>You don't have permission to access /ygN8yWfK.py
+on this server.</p>
+<hr>
+<address>Apache/2.2.22 (Ubuntu) Server at 192.168.2.131 Port 80</address>
+</body></html>
+
+--78080b45-H--
+Message: Access denied with code 403 (phase 2). Matched phrase "w3af" at REQUEST_HEADERS:User-agent. [file "/etc/modsecurity/activated_rules/modsecurity_crs_35_bad_robots.conf"] [line "20"] [id "990002"] [rev "2.2.5"] [msg "Request Indicates a Security Scanner Scanned the Site"] [severity "WARNING"] [tag "AUTOMATION/SECURITY_SCANNER"] [tag "WASCTC/WASC-21"] [tag "OWASP_TOP_10/A7"] [tag "PCI/6.5.10"]
+Action: Intercepted (phase 2)
+Apache-Handler: proxy-server
+Stopwatch: 1355193008764075 11325 (- - -)
+Stopwatch2: 1355193008764075 11325; combined=9174, p1=411, p2=8680, p3=0, p4=0, p5=83, sr=80, sw=0, l=0, gc=0
+Response-Body-Transformed: Dechunked
+Producer: ModSecurity for Apache/2.6.6 (http://www.modsecurity.org/); OWASP_CRS/2.2.5.
+Server: Apache/2.2.22 (Ubuntu)
+
+--78080b45-Z--
+
+--389a813a-A--
+[11/Dec/2012:09:30:09 +0700] UMaasX8AAQEAAA09HZ8AAAAG 192.168.2.134 51248 192.168.2.131 80
+--389a813a-B--
+GET /Zzl8nQ5b.pl HTTP/1.1
+Host: 192.168.2.131
+Accept-encoding: gzip
+Accept: */*
+User-agent: w3af.sourceforge.net
+
+--389a813a-F--
+HTTP/1.1 403 Forbidden
+Vary: Accept-Encoding
+Content-Encoding: gzip
+Content-Length: 244
+Content-Type: text/html; charset=iso-8859-1
+
+--389a813a-E--
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>403 Forbidden</title>
+</head><body>
+<h1>Forbidden</h1>
+<p>You don't have permission to access /Zzl8nQ5b.pl
+on this server.</p>
+<hr>
+<address>Apache/2.2.22 (Ubuntu) Server at 192.168.2.131 Port 80</address>
+</body></html>
+
+--389a813a-H--
+Message: Access denied with code 403 (phase 2). Matched phrase "w3af" at REQUEST_HEADERS:User-agent. [file "/etc/modsecurity/activated_rules/modsecurity_crs_35_bad_robots.conf"] [line "20"] [id "990002"] [rev "2.2.5"] [msg "Request Indicates a Security Scanner Scanned the Site"] [severity "WARNING"] [tag "AUTOMATION/SECURITY_SCANNER"] [tag "WASCTC/WASC-21"] [tag "OWASP_TOP_10/A7"] [tag "PCI/6.5.10"]
+Action: Intercepted (phase 2)
+Apache-Handler: proxy-server
+Stopwatch: 1355193009076162 3829 (- - -)
+Stopwatch2: 1355193009076162 3829; combined=1074, p1=498, p2=374, p3=0, p4=0, p5=202, sr=165, sw=0, l=0, gc=0
+Response-Body-Transformed: Dechunked
+Producer: ModSecurity for Apache/2.6.6 (http://www.modsecurity.org/); OWASP_CRS/2.2.5.
+Server: Apache/2.2.22 (Ubuntu)
+
+--389a813a-Z--
+
+--f277756f-A--
+[11/Dec/2012:09:30:10 +0700] UMaasn8AAQEAAA0-Hy0AAAAI 192.168.2.134 51246 192.168.2.131 80
+--f277756f-B--
+GET /8tFzhneK.aspx HTTP/1.1
+Host: 192.168.2.131
+Accept-encoding: gzip
+Accept: */*
+User-agent: w3af.sourceforge.net
+
+--f277756f-F--
+HTTP/1.1 403 Forbidden
+Vary: Accept-Encoding
+Content-Encoding: gzip
+Content-Length: 245
+Content-Type: text/html; charset=iso-8859-1
+
+--f277756f-E--
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>403 Forbidden</title>
+</head><body>
+<h1>Forbidden</h1>
+<p>You don't have permission to access /8tFzhneK.aspx
+on this server.</p>
+<hr>
+<address>Apache/2.2.22 (Ubuntu) Server at 192.168.2.131 Port 80</address>
+</body></html>
+
+--f277756f-H--
+Message: Access denied with code 403 (phase 2). Matched phrase "w3af" at REQUEST_HEADERS:User-agent. [file "/etc/modsecurity/activated_rules/modsecurity_crs_35_bad_robots.conf"] [line "20"] [id "990002"] [rev "2.2.5"] [msg "Request Indicates a Security Scanner Scanned the Site"] [severity "WARNING"] [tag "AUTOMATION/SECURITY_SCANNER"] [tag "WASCTC/WASC-21"] [tag "OWASP_TOP_10/A7"] [tag "PCI/6.5.10"]
+Action: Intercepted (phase 2)
+Apache-Handler: proxy-server
+Stopwatch: 1355193010080094 7817 (- - -)
+Stopwatch2: 1355193010080094 7817; combined=5072, p1=503, p2=4320, p3=0, p4=0, p5=249, sr=164, sw=0, l=0, gc=0
+Response-Body-Transformed: Dechunked
+Producer: ModSecurity for Apache/2.6.6 (http://www.modsecurity.org/); OWASP_CRS/2.2.5.
+Server: Apache/2.2.22 (Ubuntu)
+
+--f277756f-Z--
+
+--f277756f-A--
+[11/Dec/2012:09:30:10 +0700] UMaasn8AAQEAAA0@II4AAAAH 192.168.2.134 51247 192.168.2.131 80
+--f277756f-B--
+GET /hZtc06b9.xhtml HTTP/1.1
+Host: 192.168.2.131
+Accept-encoding: gzip
+Accept: */*
+User-agent: w3af.sourceforge.net
+
+--f277756f-F--
+HTTP/1.1 403 Forbidden
+Vary: Accept-Encoding
+Content-Encoding: gzip
+Content-Length: 245
+Content-Type: text/html; charset=iso-8859-1
+
+--f277756f-E--
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>403 Forbidden</title>
+</head><body>
+<h1>Forbidden</h1>
+<p>You don't have permission to access /hZtc06b9.xhtml
+on this server.</p>
+<hr>
+<address>Apache/2.2.22 (Ubuntu) Server at 192.168.2.131 Port 80</address>
+</body></html>
+
+--f277756f-H--
+Message: Access denied with code 403 (phase 2). Matched phrase "w3af" at REQUEST_HEADERS:User-agent. [file "/etc/modsecurity/activated_rules/modsecurity_crs_35_bad_robots.conf"] [line "20"] [id "990002"] [rev "2.2.5"] [msg "Request Indicates a Security Scanner Scanned the Site"] [severity "WARNING"] [tag "AUTOMATION/SECURITY_SCANNER"] [tag "WASCTC/WASC-21"] [tag "OWASP_TOP_10/A7"] [tag "PCI/6.5.10"]
+Action: Intercepted (phase 2)
+Apache-Handler: proxy-server
+Stopwatch: 1355193010083584 5783 (- - -)
+Stopwatch2: 1355193010083584 5783; combined=1107, p1=585, p2=354, p3=0, p4=0, p5=168, sr=149, sw=0, l=0, gc=0
+Response-Body-Transformed: Dechunked
+Producer: ModSecurity for Apache/2.6.6 (http://www.modsecurity.org/); OWASP_CRS/2.2.5.
+Server: Apache/2.2.22 (Ubuntu)
+
+--f277756f-Z--
+
+--39f68964-A--
+[11/Dec/2012:09:30:11 +0700] UMaas38AAQEAAA1CIeEAAAAL 192.168.2.134 51244 192.168.2.131 80
+--39f68964-B--
+GET /YRDEOFLX.cgi HTTP/1.1
+Host: 192.168.2.131
+Accept-encoding: gzip
+Accept: */*
+User-agent: w3af.sourceforge.net
+
+--39f68964-F--
+HTTP/1.1 403 Forbidden
+Vary: Accept-Encoding
+Content-Encoding: gzip
+Content-Length: 243
+Content-Type: text/html; charset=iso-8859-1
+
+--39f68964-E--
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>403 Forbidden</title>
+</head><body>
+<h1>Forbidden</h1>
+<p>You don't have permission to access /YRDEOFLX.cgi
+on this server.</p>
+<hr>
+<address>Apache/2.2.22 (Ubuntu) Server at 192.168.2.131 Port 80</address>
+</body></html>
+
+--39f68964-H--
+Message: Access denied with code 403 (phase 2). Matched phrase "w3af" at REQUEST_HEADERS:User-agent. [file "/etc/modsecurity/activated_rules/modsecurity_crs_35_bad_robots.conf"] [line "20"] [id "990002"] [rev "2.2.5"] [msg "Request Indicates a Security Scanner Scanned the Site"] [severity "WARNING"] [tag "AUTOMATION/SECURITY_SCANNER"] [tag "WASCTC/WASC-21"] [tag "OWASP_TOP_10/A7"] [tag "PCI/6.5.10"]
+Action: Intercepted (phase 2)
+Apache-Handler: proxy-server
+Stopwatch: 1355193011087017 17620 (- - -)
+Stopwatch2: 1355193011087017 17620; combined=1276, p1=557, p2=401, p3=0, p4=0, p5=318, sr=177, sw=0, l=0, gc=0
+Response-Body-Transformed: Dechunked
+Producer: ModSecurity for Apache/2.6.6 (http://www.modsecurity.org/); OWASP_CRS/2.2.5.
+Server: Apache/2.2.22 (Ubuntu)
+
+--39f68964-Z--
+
+--39f68964-A--
+[11/Dec/2012:09:30:11 +0700] UMaas38AAQEAAA1AJnYAAAAJ 192.168.2.134 51241 192.168.2.131 80
+--39f68964-B--
+GET /lRImj6y8.htmls HTTP/1.1
+Host: 192.168.2.131
+Accept-encoding: gzip
+Accept: */*
+User-agent: w3af.sourceforge.net
+
+--39f68964-F--
+HTTP/1.1 403 Forbidden
+Vary: Accept-Encoding
+Content-Encoding: gzip
+Content-Length: 245
+Content-Type: text/html; charset=iso-8859-1
+
+--39f68964-E--
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>403 Forbidden</title>
+</head><body>
+<h1>Forbidden</h1>
+<p>You don't have permission to access /lRImj6y8.htmls
+on this server.</p>
+<hr>
+<address>Apache/2.2.22 (Ubuntu) Server at 192.168.2.131 Port 80</address>
+</body></html>
+
+--39f68964-H--
+Message: Access denied with code 403 (phase 2). Matched phrase "w3af" at REQUEST_HEADERS:User-agent. [file "/etc/modsecurity/activated_rules/modsecurity_crs_35_bad_robots.conf"] [line "20"] [id "990002"] [rev "2.2.5"] [msg "Request Indicates a Security Scanner Scanned the Site"] [severity "WARNING"] [tag "AUTOMATION/SECURITY_SCANNER"] [tag "WASCTC/WASC-21"] [tag "OWASP_TOP_10/A7"] [tag "PCI/6.5.10"]
+Action: Intercepted (phase 2)
+Apache-Handler: proxy-server
+Stopwatch: 1355193011098795 7172 (- - -)
+Stopwatch2: 1355193011098795 7172; combined=993, p1=443, p2=334, p3=0, p4=0, p5=216, sr=151, sw=0, l=0, gc=0
+Response-Body-Transformed: Dechunked
+Producer: ModSecurity for Apache/2.6.6 (http://www.modsecurity.org/); OWASP_CRS/2.2.5.
+Server: Apache/2.2.22 (Ubuntu)
+
+--39f68964-Z--
+
+--39f68964-A--
+[11/Dec/2012:09:30:11 +0700] UMaas38AAQEAAA1DJPEAAAAM 192.168.2.134 51237 192.168.2.131 80
+--39f68964-B--
+GET /4KoXwe2S.asp HTTP/1.1
+Host: 192.168.2.131
+Accept-encoding: gzip
+Accept: */*
+User-agent: w3af.sourceforge.net
+
+--39f68964-F--
+HTTP/1.1 403 Forbidden
+Vary: Accept-Encoding
+Content-Encoding: gzip
+Content-Length: 243
+Content-Type: text/html; charset=iso-8859-1
+
+--39f68964-E--
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>403 Forbidden</title>
+</head><body>
+<h1>Forbidden</h1>
+<p>You don't have permission to access /4KoXwe2S.asp
+on this server.</p>
+<hr>
+<address>Apache/2.2.22 (Ubuntu) Server at 192.168.2.131 Port 80</address>
+</body></html>
+
+--39f68964-H--
+Message: Access denied with code 403 (phase 2). Matched phrase "w3af" at REQUEST_HEADERS:User-agent. [file "/etc/modsecurity/activated_rules/modsecurity_crs_35_bad_robots.conf"] [line "20"] [id "990002"] [rev "2.2.5"] [msg "Request Indicates a Security Scanner Scanned the Site"] [severity "WARNING"] [tag "AUTOMATION/SECURITY_SCANNER"] [tag "WASCTC/WASC-21"] [tag "OWASP_TOP_10/A7"] [tag "PCI/6.5.10"]
+Action: Intercepted (phase 2)
+Apache-Handler: proxy-server
+Stopwatch: 1355193011094885 12998 (- - -)
+Stopwatch2: 1355193011094885 12998; combined=1043, p1=515, p2=346, p3=0, p4=0, p5=182, sr=154, sw=0, l=0, gc=0
+Response-Body-Transformed: Dechunked
+Producer: ModSecurity for Apache/2.6.6 (http://www.modsecurity.org/); OWASP_CRS/2.2.5.
+Server: Apache/2.2.22 (Ubuntu)
+
+--39f68964-Z--
+
+--11ec5559-A--
+[11/Dec/2012:09:30:12 +0700] UMaatH8AAQEAAA1FJmkAAAAO 192.168.2.134 51236 192.168.2.131 80
+--11ec5559-B--
+GET /ATMAFVAM.do HTTP/1.1
+Host: 192.168.2.131
+Accept-encoding: gzip
+Accept: */*
+User-agent: w3af.sourceforge.net
+
+--11ec5559-F--
+HTTP/1.1 403 Forbidden
+Vary: Accept-Encoding
+Content-Encoding: gzip
+Content-Length: 242
+Content-Type: text/html; charset=iso-8859-1
+
+--11ec5559-E--
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>403 Forbidden</title>
+</head><body>
+<h1>Forbidden</h1>
+<p>You don't have permission to access /ATMAFVAM.do
+on this server.</p>
+<hr>
+<address>Apache/2.2.22 (Ubuntu) Server at 192.168.2.131 Port 80</address>
+</body></html>
+
+--11ec5559-H--
+Message: Access denied with code 403 (phase 2). Matched phrase "w3af" at REQUEST_HEADERS:User-agent. [file "/etc/modsecurity/activated_rules/modsecurity_crs_35_bad_robots.conf"] [line "20"] [id "990002"] [rev "2.2.5"] [msg "Request Indicates a Security Scanner Scanned the Site"] [severity "WARNING"] [tag "AUTOMATION/SECURITY_SCANNER"] [tag "WASCTC/WASC-21"] [tag "OWASP_TOP_10/A7"] [tag "PCI/6.5.10"]
+Action: Intercepted (phase 2)
+Apache-Handler: proxy-server
+Stopwatch: 1355193012098650 8552 (- - -)
+Stopwatch2: 1355193012098650 8552; combined=1072, p1=499, p2=370, p3=0, p4=0, p5=203, sr=168, sw=0, l=0, gc=0
+Response-Body-Transformed: Dechunked
+Producer: ModSecurity for Apache/2.6.6 (http://www.modsecurity.org/); OWASP_CRS/2.2.5.
+Server: Apache/2.2.22 (Ubuntu)
+
+--11ec5559-Z--
+
+--11ec5559-A--
+[11/Dec/2012:09:30:12 +0700] UMaatH8AAQEAAA0EA4MAAAAD 192.168.2.134 51235 192.168.2.131 80
+--11ec5559-B--
+GET /sitemap.xml HTTP/1.1
+Host: 192.168.2.131
+Accept-encoding: gzip
+Accept: */*
+User-agent: w3af.sourceforge.net
+
+--11ec5559-F--
+HTTP/1.1 403 Forbidden
+Vary: Accept-Encoding
+Content-Encoding: gzip
+Content-Length: 241
+Content-Type: text/html; charset=iso-8859-1
+
+--11ec5559-E--
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>403 Forbidden</title>
+</head><body>
+<h1>Forbidden</h1>
+<p>You don't have permission to access /sitemap.xml
+on this server.</p>
+<hr>
+<address>Apache/2.2.22 (Ubuntu) Server at 192.168.2.131 Port 80</address>
+</body></html>
+
+--11ec5559-H--
+Message: Access denied with code 403 (phase 2). Matched phrase "w3af" at REQUEST_HEADERS:User-agent. [file "/etc/modsecurity/activated_rules/modsecurity_crs_35_bad_robots.conf"] [line "20"] [id "990002"] [rev "2.2.5"] [msg "Request Indicates a Security Scanner Scanned the Site"] [severity "WARNING"] [tag "AUTOMATION/SECURITY_SCANNER"] [tag "WASCTC/WASC-21"] [tag "OWASP_TOP_10/A7"] [tag "PCI/6.5.10"]
+Action: Intercepted (phase 2)
+Apache-Handler: proxy-server
+Stopwatch: 1355193012499867 2527 (- - -)
+Stopwatch2: 1355193012499867 2527; combined=883, p1=347, p2=330, p3=0, p4=0, p5=205, sr=122, sw=1, l=0, gc=0
+Response-Body-Transformed: Dechunked
+Producer: ModSecurity for Apache/2.6.6 (http://www.modsecurity.org/); OWASP_CRS/2.2.5.
+Server: Apache/2.2.22 (Ubuntu)
+
+--11ec5559-Z--
+
