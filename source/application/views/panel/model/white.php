@@ -37,7 +37,7 @@
                   <th>URL Pattern</th>
                   <th>Status</th>
                   
-                  <th>Create Date</th><th>------</th>
+                  <th>Action</th>
               </tr>
               </thead>
               <tfoot>
@@ -46,11 +46,10 @@
               <tbody>
          	  <?php foreach ($whitelist_url as $u) { ?>
               <tr>
-                  <td><?=10000+$u->wid?></td>
+                  <td><?=10000+$u->bid?></td>
                   <td><?=$u->url_pattern?></td>
                   <td width="3%"><?=$u->status?></td>
                   
-                  <td><?=$b->date_created?></td>
                   <td width="15%">
                   	<button onclick="editrules(<?=$u->wid?>)" data-toggle="modal" data-target="#myRule">Edit</button> 
                   	<button onclick="padamrules(<?=$u->wid?>)">Delete</button>
@@ -88,7 +87,7 @@
                           <th>IP</th>
                           <th>Status</th>
                           
-                          <th>Create Date</th><th>------</th>
+                          <th>Action</th>
                        </tr>
                       </thead>
                       <tfoot>
@@ -97,11 +96,10 @@
                        <tbody>
                       <?php foreach ($whitelist_ip as $b) { ?>
 		              <tr>
-		                  <td><?=10000+$b->wid?></td>
+		                  <td><?=10000+$b->bid?></td>
 		                  <td><?=$b->url_pattern?></td>
 		                  <td width="3%"><?=$b->status?></td>
 		                  
-		                  <td><?=$b->date_created?></td>
 		                  <td width="15%">
                   	<button onclick="editrules(<?=$b->wid?>)" data-toggle="modal" data-target="#myRule">Edit</button> 
                   	<button onclick="padamrules(<?=$b->wid?>)">Delete</button>
@@ -133,7 +131,7 @@
         <tbody>
            <?php foreach ($whitelist as $b) { ?>
               <tr>
-                  <td><?=20000+$b->bid?></td>
+                  <td><?=10000+$b->bid?></td>
                   <td><?=$b->url_pattern?></td>
                   <td width="3%"><?=$b->status?></td>
                   

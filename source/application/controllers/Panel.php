@@ -140,11 +140,11 @@ class Panel extends CI_Controller {
 	public function white(){
 			
 		$arr_ip = array(
-			'jenis' => 1
+			'jenis' => '1'
 		);
 		
 		$arr_url = array(
-			'jenis' => 0
+			'jenis' => '0'
 		);
 		
 		$data['whitelist'] = $this->datasistem->listdata(null,'whitelist',null,null)->result();
@@ -156,11 +156,11 @@ class Panel extends CI_Controller {
 	public function black(){
 		
 		$arr_ip = array(
-			'jenis' => 1
+			'jenis' => '1'
 		);
 		
 		$arr_url = array(
-			'jenis' => 0
+			'jenis' => '0'
 		);
 		
 		$data['blacklist'] = $this->datasistem->listdata(null,'blacklist',null,null)->result();
