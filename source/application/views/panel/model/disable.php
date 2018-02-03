@@ -29,7 +29,7 @@
                   <th>Rules ID</th>
                   <th>Status</th>
                   
-                  <th>------</th>
+                  <th>Action</th>
               </tr>
               </thead>
               <tfoot>

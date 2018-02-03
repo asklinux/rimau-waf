@@ -242,9 +242,10 @@ class Datasistem extends CI_Model {
 				$publicPort=$item->port;
 				$publicDomain=$item->hosts;
 				$serverUrl= $item->description;
+				$modsstatus = $item->SSLEngine;
 				
 				$content="<VirtualHost *:*>
-SecRuleEngine On				
+SecRuleEngine $modsstatus				
 ProxyRequests Off
 <Proxy *>
 	Order deny,allow

@@ -40,7 +40,7 @@
 				<th>Host</th>
 				<th>Port</th>
 				<th>Url</th>
-				<th></th>
+				<th>Action</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -52,7 +52,9 @@
 				<td><?=$s->hosts?></td>
 				<td><?=$s->port?></td>
 				<td><?=$s->description?></td>
-				<td width="15%"><button onclick="editserver(<?=$s->id?>);" data-toggle="modal" data-target="#myModal">Edit</button> 
+				<td width="20%">
+					<button onclick="editserver(<?=$s->id?>);" data-toggle="modal" data-target="#myModal">Edit</button> 
+					<button onclick="padamserver(<?=$s->id?>)" >Configure</button>
 					<button onclick="padamserver(<?=$s->id?>)" >Delete</button></td>
 			</tr>
 			<?php	

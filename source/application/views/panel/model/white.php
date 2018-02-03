@@ -51,8 +51,8 @@
                   <td width="3%"><?=$u->status?></td>
                   
                   <td width="15%">
-                  	<button onclick="editrules(<?=$u->wid?>)" data-toggle="modal" data-target="#myRule">Edit</button> 
-                  	<button onclick="padamrules(<?=$u->wid?>)">Delete</button>
+                  	<button onclick="editrules(<?=$u->bid?>)" data-toggle="modal" data-target="#myRule">Edit</button> 
+                  	<button onclick="padamrules(<?=$u->bid?>)">Delete</button>
                   	</td>  
               </tr>
               <?php } ?>
@@ -101,8 +101,8 @@
 		                  <td width="3%"><?=$b->status?></td>
 		                  
 		                  <td width="15%">
-                  	<button onclick="editrules(<?=$b->wid?>)" data-toggle="modal" data-target="#myRule">Edit</button> 
-                  	<button onclick="padamrules(<?=$b->wid?>)">Delete</button>
+                  	<button onclick="editrules(<?=$b->bid?>)" data-toggle="modal" data-target="#myRule">Edit</button> 
+                  	<button onclick="padamrules(<?=$b->bid?>)">Delete</button>
                   	</td>  
 		              </tr>
 		              <?php } ?>

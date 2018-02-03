@@ -304,7 +304,7 @@ class Panel extends CI_Controller {
 		else if ($this->input->post('jenis') == 2){
 			
 			$data = array(
-				'wid' => $this->input->post('id')
+				'bid' => $this->input->post('id')
 			);	
 			
 			$maklumat['rules'] = $this->datasistem->listdata($data,'whitelist',null,null)->result_array();
