@@ -273,7 +273,7 @@ class Panel extends CI_Controller {
 		
 		else if ($this->input->post('jenis') == 2){	
 			$data = array(
-				'wid' => $this->input->post('id')
+				'bid' => $this->input->post('id')
 			);	
 			$this->datasistem->remove($data,'whitelist');
 						
@@ -339,7 +339,7 @@ class Panel extends CI_Controller {
 			$simpan = array(
 				'url_pattern' => $this->input->post('host')
 			);
-			$this->datasistem->edit($this->input->post('id'),'wid',$simpan,'whitelist');
+			$this->datasistem->edit($this->input->post('id'),'bid',$simpan,'whitelist');
 			echo $this->datasistem->write_whitelist();
 		}
 		
