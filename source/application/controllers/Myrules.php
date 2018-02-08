@@ -335,6 +335,19 @@ class Myrules extends CI_Controller {
 		     echo 'Unable to write the file';
 		}
 	}
+	function ownlist(){
+		
+		$simpan = array(
+			'name' => $this->input->post('name'),
+			'rules' => $this->input->post('rules')
+		);
+		
+		echo $this->datasistem->save($simpan,'ownrules');
+		
+		
+		$this->datasistem->write_ownlist();
+		
+	}
 }
 	
 	

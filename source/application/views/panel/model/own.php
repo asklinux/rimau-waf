@@ -16,20 +16,20 @@
 						<label class="col-sm-3 control-label " for="form-field-1-1"> Rules Name </label>
 
 						<div class="col-sm-9">
-							<input type="text" id="form-field-1-1" placeholder="Text Field" class="form-control" />
+							<input type="text" id="name" name="rules" placeholder="Rules Name" class="form-control" />
 						</div>
 					</div>
                 	<div class="form-group">
 						<label class="col-sm-3 control-label  " for="form-field-1-1"> Rules </label>
 
 						<div class="col-sm-9">
-						<textarea class="form-control"></textarea>	
+						<textarea class="form-control" id="rules" name="rules"></textarea>	
 						</div>
 						
 						
 					</div>
 					<div class="form-group">
-						<button class="pull-right" id="waddurl">Add</button>
+						<button class="pull-right" id="addrules">Add</button>
 					</div>
                 	
                 	
@@ -46,8 +46,7 @@
               <thead>
               <tr>
                   <th>Rules ID</th>
-                  <th width="50%">Rules</th>
-                  <th>Status</th>
+                  <th width="50%">Rules Name</th>
                   
                   <th>Function</th>
               </tr>
@@ -63,12 +62,11 @@
               <?php } else {?>
          	  <?php foreach ($listid as $b) { ?>
               <tr>
-                  <td><?=$b->orid?></td>
-                  <td width="50%"><?=$b->rules?></td>
-                  <td width="3%"><?=$b->status?></td>
-                  <td width="5%">
-                  	<button onclick="editrules(<?=$b->orid?>)" data-toggle="modal" data-target="#myRule">Edit</button> 
-                  	<button onclick="padamrules(<?=$b->orid?>)">Delete</button>
+                  <td><?=$b->rid?></td>
+                  <td width="50%"><?=$b->name?></td>
+                  <td width="15%">
+                  	<button onclick="editrules(<?=$b->rid?>)" data-toggle="modal" data-target="#myRule">Edit</button> 
+                  	<button onclick="padamrules(<?=$b->rid?>)">Delete</button>
                   	</td>  
               </tr>
               <?php } ?>
@@ -87,8 +85,9 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Edit White Rule</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        	<span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Edit Own Rule</h4>
       </div>
       <div class="modal-body" >
         <div id="popedit">
@@ -108,24 +107,24 @@ $(document).ready(function() {
     clearTimeout(livelog);
     break;		
 });
-
-$("#waddurl").click(function(){
+$('form').submit(false);
+$("#addrules").click(function(){
 	
 	
-	if ($('#wdurl').val() === ''){
+	if ($('#rules').val() === ''){
 	
 		alert("please enter the url information");
 	
 	}
 	else {
 		
-		$.post('myrules/whitelist',{url:$('#wdurl').val(),jenis:0},function(data){
+		$.post('myrules/ownlist',{name:$('#name').val(),rules:$('#rules').val()},function(data){
 		
 			var link = $('li.active a[data-toggle="tab"]');
 			link.parent().removeClass('active');
-			var tabLink = link.attr('href');
+			//var tabLink = link.attr('href');
 			
-			$('#paparx').load('panel/white',{stab:tabLink}).show();
+			$('#paparx').load('panel/ownrules').show();
 		}); 
 	}
 	
@@ -154,20 +153,18 @@ function padamrules(id){
 	
 	if(confirm("Are you sure you want to delete this?")){
 		
-		$.post('panel/padamrules',{id:id,jenis:2},function(data){
+		$.post('panel/padamownrules',{id:id},function(data){
 		
-		$('#paparx').load('panel/white').show();
+			$('#paparx').load('panel/ownrules').show();
 		
 		});		
 
 	}
-	else {
-		
-	}
+	
 }
 function editrules(id){
 	
-	$.post('panel/editrules',{id:id,jenis:2},function(data){
+	$.post('panel/editownrules',{id:id,jenis:2},function(data){
 		
 		
 		$("#popedit").html(data);
@@ -178,13 +175,13 @@ function saveedit(){
 	
 	var dataserver = {
 		id:$("#id2").val(),
-		host:$("#rules").val(),
-		jenis:2
+		name:$("#namee").val(),
+		rules:$("#rulese").val()
 		};
 	
-	$.post('panel/editrulessimpan',dataserver,function(data){
+	$.post('panel/editownsimpan',dataserver,function(data){
 
-		$('#paparx').load('panel/white').show();
+		$('#paparx').load('panel/ownrules').show();
 	});
 	
 }

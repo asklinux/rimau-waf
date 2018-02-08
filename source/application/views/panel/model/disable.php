@@ -27,7 +27,6 @@
               <thead>
               <tr>
                   <th>Rules ID</th>
-                  <th>Status</th>
                   
                   <th>Action</th>
               </tr>
@@ -39,7 +38,6 @@
          	  <?php foreach ($listid as $b) { ?>
               <tr>
                   <td><?=$b->rules_id?></td>
-                  <td width="3%"><?=$b->status?></td>
                   
                   <td width="15%">
                   	<button onclick="editrules(<?=$b->id?>)" data-toggle="modal" data-target="#myRule">Edit</button> 

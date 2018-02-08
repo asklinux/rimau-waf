@@ -405,5 +405,22 @@ ProxyRequests Off
 	
 		 //echo  $source_ip;
 	}
+	function write_ownlist(){
+			
+		$this->load->helper('file');
+		
+		$data = '#own Rules rimau dari database'."\n";
+		
+		$getw = $this->datasistem->listdata(null,'ownrules',null,null)->result();
+	
+		foreach ($getw as $w) {
+			//$gid = 30000+$w->wid;
+			$data .= $w->rules.PHP_EOL.PHP_EOL;
+		}
+		 
+		if ( !write_file('/lib/modsecurity.d/rimau_rules/modsecurity_crs_10_ownlist.conf', $data)){
+		     return 'Unable to write the file';
+		}
+	}
 
 }

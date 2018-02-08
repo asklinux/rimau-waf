@@ -456,6 +456,36 @@ class Panel extends CI_Controller {
 			$log['attack'] = $results;
 			$this->load->view('panel/model/attack',$log);
 		}
+		function padamownrules(){
+		
+			$data = array(
+				'rid' => $this->input->post('id')
+			);	
+			$this->datasistem->remove($data,'ownrules');
+						
+			echo $this->datasistem->write_ownlist();
+		
+		}
+		function editownrules(){
+		
+
+			$data = array(
+				'rid' => $this->input->post('id')
+			);	
+			$maklumat['rules'] = $this->datasistem->listdata($data,'ownrules',null,null)->result_array();
+			$this->load->view('panel/model/edit_rules_own',$maklumat);
+		}
+		function editownsimpan(){
+		
+	
+			$simpan = array(
+				'name' => $this->input->post('name'),
+				'rules' => $this->input->post('rules')
+			);
+			
+			$this->datasistem->edit($this->input->post('id'),'rid',$simpan,'ownrules');
+			echo $this->datasistem->write_ownlist();
+		}
 
 }
 	
