@@ -35,7 +35,6 @@
               <tr>
                   <th>ID</th>
                   <th>URL Pattern</th>
-                  <th>Status</th>
                   
                   <th>Action</th>
               </tr>
@@ -48,7 +47,6 @@
               <tr>
                   <td><?=10000+$u->bid?></td>
                   <td><?=$u->url_pattern?></td>
-                  <td width="3%"><?=$u->status?></td>
                   
                   <td width="15%">
                   	<button onclick="editrules(<?=$u->bid?>)" data-toggle="modal" data-target="#myRule">Edit</button> 
