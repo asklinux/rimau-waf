@@ -1,4 +1,4 @@
-					
+		
 	<div class="page-content">						
 	<ul class="nav nav-tabs">
         <li class="active"><a data-toggle="tab" href="#url">URL</a> </li>
@@ -19,7 +19,7 @@
                   <th>URL Pattern</th>
                   <th>Status</th>
                  
-                  <th>Create Date</th> <th>------</th>
+                  <th>Action</th>
               </tr>
               </thead>
               <tfoot>
@@ -32,7 +32,6 @@
                   <td><?=$b->url_pattern?></td>
                   <td width="3%"><?=$b->status?></td>
                   
-                  <td><?=$b->date_created?></td>
 					<td width="15%">
                   	<button onclick="editrules(<?=$b->bid?>)" data-toggle="modal" data-target="#myRule">Edit</button> 
                   	<button onclick="padamrules(<?=$b->bid?>)">Delete</button>
@@ -56,7 +55,7 @@
                   <th>IP</th>
                   <th>Status</th>
                   
-                  <th>Create Date</th><th>------</th>
+                  <th>Action</th>
               </tr>
               </thead>
               <tfoot>
@@ -69,7 +68,6 @@
                   <td><?=$b->url_pattern?></td>
                   <td width="3%"><?=$b->status?></td>
                   
-                  <td><?=$b->date_created?></td>
 <td width="15%">
                   	<button onclick="editrules(<?=$b->bid?>)" data-toggle="modal" data-target="#myRule">Edit</button> 
                   	<button onclick="padamrules(<?=$b->bid?>)">Delete</button></td>              </tr>

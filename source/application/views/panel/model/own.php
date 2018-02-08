@@ -3,24 +3,43 @@
 	<div class="page-content">						
 	
 
-          <h3>Write Own Rules</h3>
-          <p>
-          <div class="row">
+       
+    
+          <div class="row">   
+          	<h3>Write Own Rules</h3>
+          	<hr/>
               <div class="col-md-12">
-                <div class="pull-left">RULES ID : <input type="text" name="url" id="wdurl" />  <button id="waddurl">Add</button></div>
-              
-              <div class="pull-right">
-              	<!--
-              	<i class="fa fa-eye" aria-hidden="true"></i> 
-              	
-              	<a href="view.php">
-                      View Whitelist-URL Configurationn</a>
-                -->
-                 </div>
+                
+                	<form class="form-horizontal" role="form">
+
+					<div class="form-group">
+						<label class="col-sm-3 control-label " for="form-field-1-1"> Rules Name </label>
+
+						<div class="col-sm-9">
+							<input type="text" id="form-field-1-1" placeholder="Text Field" class="form-control" />
+						</div>
+					</div>
+                	<div class="form-group">
+						<label class="col-sm-3 control-label  " for="form-field-1-1"> Rules </label>
+
+						<div class="col-sm-9">
+						<textarea class="form-control"></textarea>	
+						</div>
+						
+						
+					</div>
+					<div class="form-group">
+						<button class="pull-right" id="waddurl">Add</button>
+					</div>
+                	
+                	
+                	</form>
+           
+
                    
               </div>
           </div>
-          <hr />
+   
           <div class="row">
               <div class="col-md-12">
                 <table  id="example" class="table table-striped table-bordered" width="100%" cellspacing="0">
@@ -37,6 +56,11 @@
           
               </tfoot>
               <tbody>
+              <?php if (count($listid) == 0) { ?>
+              	<tr>
+              		<td colspan="4" align="center">No Rules</td>
+              	</tr>
+              <?php } else {?>
          	  <?php foreach ($listid as $b) { ?>
               <tr>
                   <td><?=$b->orid?></td>
@@ -48,7 +72,7 @@
                   	</td>  
               </tr>
               <?php } ?>
-          
+          	  <?php } ?>
               </tbody>
           </table>
               </div>

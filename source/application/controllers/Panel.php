@@ -42,8 +42,10 @@ class Panel extends CI_Controller {
 		
 	}
 	function utama(){
-
+			
 			$this->load->view('panel/model/utama');
+			
+			
 
 	}
 	function live_cpu(){
@@ -138,11 +140,11 @@ class Panel extends CI_Controller {
 	public function white(){
 			
 		$arr_ip = array(
-			'jenis' => 1
+			'jenis' => '1'
 		);
 		
 		$arr_url = array(
-			'jenis' => 0
+			'jenis' => '0'
 		);
 		
 		$data['whitelist'] = $this->datasistem->listdata(null,'whitelist',null,null)->result();
@@ -154,11 +156,11 @@ class Panel extends CI_Controller {
 	public function black(){
 		
 		$arr_ip = array(
-			'jenis' => 1
+			'jenis' => '1'
 		);
 		
 		$arr_url = array(
-			'jenis' => 0
+			'jenis' => '0'
 		);
 		
 		$data['blacklist'] = $this->datasistem->listdata(null,'blacklist',null,null)->result();
@@ -271,7 +273,7 @@ class Panel extends CI_Controller {
 		
 		else if ($this->input->post('jenis') == 2){	
 			$data = array(
-				'wid' => $this->input->post('id')
+				'bid' => $this->input->post('id')
 			);	
 			$this->datasistem->remove($data,'whitelist');
 						
@@ -302,7 +304,7 @@ class Panel extends CI_Controller {
 		else if ($this->input->post('jenis') == 2){
 			
 			$data = array(
-				'wid' => $this->input->post('id')
+				'bid' => $this->input->post('id')
 			);	
 			
 			$maklumat['rules'] = $this->datasistem->listdata($data,'whitelist',null,null)->result_array();
@@ -337,7 +339,7 @@ class Panel extends CI_Controller {
 			$simpan = array(
 				'url_pattern' => $this->input->post('host')
 			);
-			$this->datasistem->edit($this->input->post('id'),'wid',$simpan,'whitelist');
+			$this->datasistem->edit($this->input->post('id'),'bid',$simpan,'whitelist');
 			echo $this->datasistem->write_whitelist();
 		}
 		
@@ -411,6 +413,49 @@ class Panel extends CI_Controller {
             echo "</pre>";
             
         }
+		
+		function attack(){
+			$file = "/usr/share/rimauwaf/log/modsec_audit.log";
+		
+			
+			if (file_exists($file)) {
+					
+				$fp = fopen( $file, "r" );
+				
+				$i = 0;
+				$error_block = '';
+				while (!feof($fp)) {
+						
+					set_time_limit(0); // for increasing the execution time
+					// do some processing with the line!
+					
+					
+					
+					$line = fgets($fp);//read 1line
+					
+					$error_block .= $line;
+					
+					$flag=preg_match_all("/^--([0-9a-fA-F]{8,})-([Z])--$/", $line);
+			
+					if($flag){
+						
+						$results[] = $this->datasistem->parse_block($error_block);
+						
+						//$error_block = "";
+						//$flag=0;
+					}
+					
+					$i++;
+			}
+				if(!$fp){
+					echo "Couldn't open the data file. Try again later.";
+					exit;
+				}
+			}
+			fclose($fp);
+			$log['attack'] = $results;
+			$this->load->view('panel/model/attack',$log);
+		}
 
 }
 	
