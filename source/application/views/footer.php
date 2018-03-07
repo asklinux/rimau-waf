@@ -1,7 +1,7 @@
 				<div align="center" class="footer-inner">
 					<div class="footer-content">
 						<span class="bigger-10">
-							<span class="blue bolder">Rimau Waf Enteprice </span>
+							<span class="blue bolder">Rimau Waf Enteprise </span>
 							Cloud Application Tunnelbiz GPL V2; 2017 <br/>for Microsoft Azure Cloud | Uptime :  <?php echo $uptime; ?>
 						</span>
 

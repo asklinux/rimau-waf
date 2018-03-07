@@ -3,9 +3,9 @@
 	<div class="col-md-12">
 		<div class="form-group">
 	
-		Host : <input id="hosts" type="text" placeholder="Add IP/Domain Name"  />
+		Domain : <input id="hosts" type="text" placeholder="Add IP/Domain Name"  />
 		Port : <input id="port" type="number" />
-		Url  : <input id="maklumat" type="text" />
+		Real Server  : <input id="maklumat" type="text" />
 		<button id="addserver" >Add Server</button>	
 		<!--
 		<div class="pull-right"><i class="fa fa-eye" aria-hidden="true"></i> 
@@ -14,20 +14,76 @@
 		-->	
 
 		<div class="pull-right"><i class="fa fa-eye" aria-hidden="true"></i> 
-			<a id="ssl">SSL Configurationn</a></div>
+			<a id="ssl">Advance Configurationn</a></div>
 		</div>	
    </div>
    <div class="col-md-12" id="viewssl" style='display:none'>
-   	SSLCertificateFile : <input  id="sslcert" type="text" placeholder="Ssl Cert Location" />
-	SSLEngine : 
-	<select id="sslengin">
+    
+	
+	<br/>
+	
+	 <div class="form-group">
+	 	<label for="sslengin">	SSLEngine </label>
+	 	<select id="sslengin">
+	 	<option value="off">OFF</option>
   		<option value="on">ON</option>
-  		<option value="off">OFF</option> 
+  		 
 	</select>
+	 </div>	
+	 
+	  <div class="col-md-12" id="sslcert" style='display:none'>
+	  <div class="form-group">
+    <label for="SSLCertificateFile">SSLCertificateFile</label>
+    <input type="text" class="form-control" id="SSLCertificateFile" placeholder="/path/to/your_domain_name.crt">
+  </div>
+  <div class="form-group">
+    <label for="SSLCertificateKeyFile">SSLCertificateKeyFile</label>
+    <input type="text" class="form-control" id="SSLCertificateKeyFile" placeholder="/path/to/your_private.key">
+  </div>
+  
+  <div class="form-group">
+    <label for="SSLCertificateChainFile">SSLCertificateChainFile</label>
+    <input type="text" class="form-control" id="SSLCertificateChainFile" placeholder="/path/to/Digicertcx.crt">
+  </div>
+
 	</div>
+	
+	<div class="form-group">
+	 	<label for="lb">	Load Balancer </label>
+	 	<select id="lb">
+	 	<option value="0">No</option> 
+  		<option value="1">Yes</option>
+	</select>
+	 </div>	
+	
+	<div class="form-group" id="lbtype" style='display:none'>
+	 	<label for="lbmethod">	lbmethod </label>
+	 	<select id="lbmethod">
+  		<option value="bytraffic">bytraffic</option>
+  		<option value="byrequests">byrequests</option> 
+	</select>
+	 </div>	
+	 
+	</div>	 
+	 
 	<script>
 		$("#ssl").click(function(){
 			$("#viewssl").slideDown('show');
+		});
+		$("#sslengin").change(function(){
+			if($(this).val() === 'on'){
+			  $("#sslcert").slideDown('show');
+			}else{
+			  $("#sslcert").slideUp('hide');
+			}
+		});
+		
+		$("#lb").change(function(){
+			if($(this).val() === '1'){
+			  $("#lbtype").slideDown('show');
+			}else{
+			  $("#lbtype").slideUp('hide');
+			}
 		});
 	</script>
 	</div>
@@ -37,9 +93,9 @@
 		<thead>
 			<tr>
 				
-				<th>Host</th>
+				<th>Domain</th>
 				<th>Port</th>
-				<th>Url</th>
+				<th>Real Server</th>
 				<th>Action</th>
 			</tr>
 		</thead>
@@ -52,9 +108,9 @@
 				<td><?=$s->hosts?></td>
 				<td><?=$s->port?></td>
 				<td><?=$s->description?></td>
-				<td width="20%">
+				<td width="30%">
 					<button onclick="editserver(<?=$s->id?>);" data-toggle="modal" data-target="#myModal">Edit</button> 
-					<button onclick="padamserver(<?=$s->id?>)" >Configure</button>
+					<button onclick="confserver(<?=$s->id?>)" >Advance Conf</button>
 					<button onclick="padamserver(<?=$s->id?>)" >Delete</button></td>
 			</tr>
 			<?php	
@@ -85,6 +141,26 @@
     </div>
   </div>
 </div>
+
+<div class="modal fade" id="confx" tabindex="-1" role="dialog" aria-labelledby="confxLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Configure Web Server</h4>
+      </div>
+      <div class="modal-body" >
+        <div id="popedit2">
+        	
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" onclick="saveedit();" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 <script>
 $("#addserver").click(function(){
 	
@@ -96,7 +172,9 @@ $("#addserver").click(function(){
 		host:$("#hosts").val(),
 		port:$("#port").val(),
 		maklumat:$("#maklumat").val(),
-		SSLCertificateFile:$("#sslcert").val(),
+		SSLCertificateFile:$("#SSLCertificateFile").val(),
+		SSLCertificateKeyFile:$("#SSLCertificateKeyFile").val(),
+		SSLCertificateChainFile:$("#SSLCertificateChainFile").val(),
 		SSLEngine:$("#sslengin").val(),
 		};
 	$.post('panel/addserver',addserver,function(data){
@@ -134,6 +212,15 @@ function editserver(id){
 		
 	});	
 	
+}
+function confserver(id){
+	//$.post('panel/confserver',{id:id},function(data){
+		
+		$('#dimana').text("Web Server > Advance Configure > "+id).show();	
+		$('#paparx').load('panel/confadvance',{id:id}).show();
+		//$("#popedit2").html(data);
+		
+	//});	
 }
 function saveedit(){
 	

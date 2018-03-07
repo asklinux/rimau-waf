@@ -35,6 +35,13 @@
           
               </tfoot>
               <tbody>
+              <?php if (count($listid) == 0) {
+              ?>		
+              <tr>
+              	<td colspan="2" align="center"> No Rules Display </td>
+              </tr>
+              <?php	
+              } ?>	
          	  <?php foreach ($listid as $b) { ?>
               <tr>
                   <td><?=$b->rules_id?></td>

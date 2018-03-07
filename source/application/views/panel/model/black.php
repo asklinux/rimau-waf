@@ -25,6 +25,13 @@
             
               </tfoot>
               <tbody>
+              <?php if (count($blacklist_url) == 0) {
+              ?>		
+              <tr>
+              	<td colspan="3" align="center"> No Rules Display </td>
+              </tr>
+              <?php	
+              } ?>		
               <?php foreach ($blacklist_url as $b) { ?>
               <tr>
                   <td><?=20000+$b->bid?></td>

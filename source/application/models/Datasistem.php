@@ -244,20 +244,26 @@ class Datasistem extends CI_Model {
 				$serverUrl= $item->description;
 				$modsstatus = $item->SSLEngine;
 				
-				$content="<VirtualHost *:*>
-SecRuleEngine $modsstatus				
-ProxyRequests Off
+				$content='<VirtualHost *:'.$publicPort.'>
+#SecRuleEngine '.$modsstatus.'
+RemoteIPHeader X-Forwarded-For
 <Proxy *>
-	Order deny,allow
-	Allow from all
-</Proxy>
-<Location />
-	ProxyPass  $serverUrl
-	ProxyPassReverse  $serverUrl
-</Location>
-	ServerName $publicDomain
-	ServerSignature Off
-</VirtualHost>\n\n";
+        AllowOverride All
+        Allow from all
+        SetEnv force-proxy-request-1.0 1
+        SetEnv proxy-nokeepalive 1
+
+    </Proxy>				
+	ProxyPreserveHost On
+	ProxyRequests off
+	ProxyPass / http://'.$serverUrl.'/
+	ProxyPassReverse /  http://'.$serverUrl.'/
+
+	ServerName '.$publicDomain.'
+	ServerAlias www.'.$publicDomain.'
+	ServerSignature On
+</VirtualHost>'."\n\n";
+
 				$contentHostFile.=$content;
 
                         }
