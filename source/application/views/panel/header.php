@@ -208,7 +208,30 @@
 										Tools
 									</a>
 								</li>
-								
+								<li>
+									<a id="updaterules">
+										<i class="ace-icon fa fa-cloud-download"></i>
+										Update Rules
+									</a>
+								</li>
+								<li>
+									<a id="updaterimau">
+										<i class="ace-icon fa fa-exchange"></i>
+										Update Rimauwaf
+									</a>
+								</li>
+								<li>
+									<a id="updateserver">
+										<i class="ace-icon fa  fa-desktop"></i>
+										Update Server
+									</a>
+								</li>
+								<li>
+									<a id="logserver">
+										<i class="ace-icon fa  fa-cogs"></i>
+										Set log Server
+									</a>
+								</li>
 								<li class="divider"></li>
 
 								<li>

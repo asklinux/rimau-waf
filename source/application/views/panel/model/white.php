@@ -43,6 +43,13 @@
           
               </tfoot>
               <tbody>
+               <?php if (count($whitelist_url) == 0) {
+              ?>		
+              <tr>
+              	<td colspan="3" align="center"> No Rules Display </td>
+              </tr>
+              <?php	
+              } ?>	
          	  <?php foreach ($whitelist_url as $u) { ?>
               <tr>
                   <td><?=10000+$u->bid?></td>

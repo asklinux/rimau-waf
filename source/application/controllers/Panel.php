@@ -214,8 +214,14 @@ class Panel extends CI_Controller {
 	function padamserver(){
 		$data = array(
 			'id' => $this->input->post('id')
-		);	
+		);
+		
+		$data2 = array(
+			'server_id' => $this->input->post('id')
+		);
+		
 		$this->datasistem->remove($data,'server');
+		$this->datasistem->remove($data2,'host');
 		echo $this->datasistem->write_server();
 		
 	}
@@ -231,14 +237,52 @@ class Panel extends CI_Controller {
 		$this->load->view('panel/model/edit_server',$maklumat);
 		
 	}
+	function addserverlb(){
+		
+		$data = array(
+			'id' => $this->input->post('id')
+		);	
+		
+		//$maklumat['server'] = $this->datasistem->listdata($data,'host',null,null)->result_array();
+		$maklumat['id'] = $this->input->post('id');
+ 		$this->load->view('panel/model/edit_server_lb',$maklumat);
+		
+	}
+	function confserver(){
+		
+		$data = array(
+			'id' => $this->input->post('id')
+		);	
+		
+		$maklumat['server'] = $this->datasistem->listdata($data,'server',null,null)->result_array();
+		
+		
+		$this->load->view('panel/model/edit_server',$maklumat);
+		
+	}
+	function confadvance(){
+		
+		$data = array(
+			'id' => $this->input->post('id')
+		);	
+		
+		$maklumat['server'] = $this->datasistem->listdata($data,'server',null,null)->result_array();
+		$datah = array(
+			'server_id' => $this->input->post('id')
+		);	
+		$maklumat['list'] = $this->datasistem->listdata($datah,'host',null,null)->result();
+		
+		$this->load->view('panel/model/edit_server_advance',$maklumat);
+		
+	}
 	function editserversimpan(){
 		
 		$simpan = array(
 			'hosts' => $this->input->post('host'),
 			'port' => $this->input->post('port'),
-			'description' => $this->input->post('maklumat'),
-			'SSLCertificateFile' => $this->input->post('SSLCertificateFile'),
-			'SSLEngine' =>$this->input->post('SSLEngine')
+			'description' => $this->input->post('maklumat')
+			//'SSLCertificateFile' => $this->input->post('SSLCertificateFile'),
+			//'SSLEngine' =>$this->input->post('SSLEngine')
 		);
 		$this->datasistem->edit($this->input->post('id'),'id',$simpan,'server');
 		echo $this->datasistem->write_server();

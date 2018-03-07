@@ -108,8 +108,8 @@ $(document).ready(function() {
     break;		
 });
 $('form').submit(false);
-$("#addrules").click(function(){
-	
+$("#addrules").click(function(e){
+	e.preventDefault()
 	
 	if ($('#rules').val() === ''){
 	

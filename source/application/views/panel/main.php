@@ -42,7 +42,7 @@
 					<li class="">
 						<a href="/index.php/panel/rules">
 							<i class="menu-icon fa fa-bars"></i>
-							<span class="menu-text" name="Base_Rules" >Base Rules </span>
+							<span class="menu-text" name="Base_Rules" >Global Rules </span>
 						</a>
 
 						<b class="arrow"></b>
@@ -71,7 +71,7 @@
                                         <li class="">
 						<a href="/index.php/panel/ownrules">
 							<i class="menu-icon fa fa-pencil"></i>
-							<span class="menu-text">Own Rules</span>
+							<span class="menu-text">Costume Rules</span>
 						</a>
 
 						<b class="arrow"></b>
@@ -80,7 +80,7 @@
 					<li class="">
 						<a href="/index.php/panel/white">
 							<i class="menu-icon fa fa-eraser"></i>
-							<span class="menu-text"> Whitelist </span>
+							<span class="menu-text"> Whitelist Rules </span>
 						</a>
 
 						<b class="arrow"></b>
@@ -88,7 +88,7 @@
 					<li class="">
 						<a href="/index.php/panel/black">
 							<i class="menu-icon fa fa-ban"></i>
-							<span class="menu-text"> Blacklist  </span>
+							<span class="menu-text"> Blacklist Rules  </span>
 						</a>
 
 						<b class="arrow"></b>
@@ -111,19 +111,21 @@
 					<li class="">
 						<a href="/index.php/panel/mlog">
 							<i class="menu-icon fa fa-exchange"></i>
-							<span class="menu-text">Server log </span>
+							<span class="menu-text">Live log </span>
 						</a>
 
 						<b class="arrow"></b>
 					</li>
+					<!--
 					<li class="">
 						<a href="/index.php/panel/attack">
-							<i class="menu-icon fa fa-exchange"></i>
-							<span class="menu-text">Attack Status </span>
+							<i class="menu-icon fa fa-area-chart"></i>
+							<span class="menu-text">Report </span>
 						</a>
 
 						<b class="arrow"></b>
 					</li>
+					-->
 					<li class="">
 						<a href="/index.php/panel/about">
 							<i class="menu-icon fa fa-info"></i>

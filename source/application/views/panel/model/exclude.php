@@ -1,5 +1,3 @@
-sa
-
 <script>
 $(document).ready(function() {
     clearTimeout(lari);

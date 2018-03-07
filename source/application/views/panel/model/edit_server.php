@@ -8,8 +8,28 @@
     <input type="number" class="form-control" id="port2" value="<?=$server[0]['port']?>">
   </div>
     <div class="form-group">
-    <label for="exampleInputPassword1">Url</label>
+    <label for="exampleInputPassword1">Real Server</label>
     <input type="text" class="form-control" id="url2" value="<?=$server[0]['description']?>" >
+  </div>
+   <div class="form-group">
+	 	<label for="sslengin">	SSLEngine </label>
+	 	<select id="sslengin2">
+  		<option value="on">ON</option>
+  		<option value="off">OFF</option> 
+	</select>
+	 </div>	
+	  <div class="form-group">
+    <label for="SSLCertificateFile">SSLCertificateFile</label>
+    <input type="text" class="form-control" id="SSLCertificateFile2" placeholder="/path/to/your_domain_name.crt">
+  </div>
+  <div class="form-group">
+    <label for="SSLCertificateKeyFile">SSLCertificateKeyFile</label>
+    <input type="text" class="form-control" id="SSLCertificateKeyFile2" placeholder="/path/to/your_private.key">
+  </div>
+  
+  <div class="form-group">
+    <label for="SSLCertificateChainFile">SSLCertificateChainFile</label>
+    <input type="text" class="form-control" id="SSLCertificateChainFile" placeholder="/path/to/Digicertcx.crt">
   </div>
   <!--
 
