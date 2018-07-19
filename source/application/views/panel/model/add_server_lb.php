@@ -1,27 +1,27 @@
   <div class="form-group">
 	<input type="hidden" id="id2" value=" " />
     <label for="exampleInputEmail1">Hostname Tag</label>
-    <input type="domain" class="form-control" id="tag" value="<?=$host[0]['name']?>" >
+    <input type="domain" class="form-control" id="tag" value="" >
   </div>
   <div class="form-group">
 	<input type="hidden" id="id2" value=" " />
     <label for="exampleInputEmail1">Domain/IP</label>
-    <input type="domain" class="form-control" id="ip" value="<?=$host[0]['ip']?>" >
+    <input type="domain" class="form-control" id="ip" value=" " >
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Port</label>
-    <input type="number" class="form-control" id="port2" value="<?=$host[0]['port']?>">
+    <input type="number" class="form-control" id="port2" value=" ">
   </div>
 
    <div class="form-group">
 	 	<label for="timeout">timeout</label>
-	 	<input id="timeout" maxlength="3" size="3" value="<?=$host[0]['timeout']?>" />
+	 	<input id="timeout" maxlength="3" size="3" value="" />
 
 		
-		<label for="lblset">lbset</label>
+		<label for="lblset">lblset</label>
 	 	<select id="lblset">
-  		<option  <?php $host[0]['timeout'] == 0 ? 'selected="selected"' : ''?>  value="0">0</option>
-  		<option  <?php $host[0]['timeout'] == 1 ? 'selected="selected"' : ''?> value="1">1</option> 
+  		<option value="0">0</option>
+  		<option value="1">1</option> 
 		</select>
 		
 		<label for="route">route</label>

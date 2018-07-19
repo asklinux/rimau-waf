@@ -229,7 +229,6 @@ class Datasistem extends CI_Model {
 		}
 	}
 	function write_server(){
-			
 		$list = $this->datasistem->listdata(null,'server',null,null)->result();	
 		$this->db->select('port');
  		$this->db->group_by('port'); 
@@ -238,175 +237,40 @@ class Datasistem extends CI_Model {
 		foreach ( $listenports as $listenport) { 
 			$openport=$listenport['port'];
 			$contentHostFile.="#Listen ".$openport."\n";
-			$contentHostFile.="#Ruler Create By Rimau Waf Panel"."\n";
 		}
 		  foreach ( $list as $item) {
-					
 				$publicPort=$item->port;
 				$publicDomain=$item->hosts;
 				$serverUrl= $item->description;
-				if($item->modsec == ''){
-					$modsstatus = 'Off';
-				}
-				else {
-					$modsstatus = $item->modsec;
-				}
-				$modssl = $item->SSLEngine;
-				$id = $item->id;
+				$modsstatus = $item->SSLEngine;
 				
-				$filter = array(
-					  'serverid' => $id
-				);
-				
-if ($item->lb == 1){
-					
-				$lbname = strstr($publicDomain,'.',true);
-				$content='<VirtualHost *:'.$publicPort.'>'."\n\n";
-				$content .= ' SecRuleEngine '.$modsstatus."\n\n";
-				
-				if ($modssl == "on") {
-					//$content .= ' SSLCipherSuite EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH'."\n";
-					$content .= ' SSLProtocol All -SSLv2 -SSLv3 -TLSv1 -TLSv1.1'."\n";
-					$content .= ' SSLHonorCipherOrder On'."\n";
-					$content .= ' SSLCertificateFile '.$item->SSLCertificateFile."\n";
-					$content .= ' SSLCertificateKeyFile '.$item->SSLCertificateKeyFile."\n";
-					$content .= ' SSLCertificateChainFile '.$item->SSLCertificateChainFile."\n";
-				}
-				
-				$content .= ' Header set X-Content-Type-Options "nosniff"'."\n";
-				$content .= ' RemoteIPHeader X-Forwarded-For'."\n\n";
-				$content .= '<Proxy *>'."\n";
-				$content .= '   AllowOverride All'."\n";
-				$content .= '   Allow from all'."\n";
-				$content .= '   SetEnv force-proxy-request-1.0 1'."\n";
-				$content .= '   SetEnv proxy-nokeepalive 1'."\n";
-				
-				$content .= '</Proxy>'."\n\n";				
-				$content .= '  ProxyPreserveHost On'."\n";
-				$content .= '  ProxyRequests off'."\n\n";
-					
-				
-				$vrules = $disabler = $this->datasistem->listdata($filter,'vrules',null,null)->result();
-				$disabler = $this->datasistem->listdata($filter,'vrules_disable',null,null)->result();
-				
-				if (count($vrules) !== null){
-					foreach ($vrules as $v) {
-						$rurl = "/lib/modsecurity.d/base_rules/";
-						$content .= '  include '.$rurl.$v->rules."\n";
-					}
-				}
-				if (count($disabler) !== null){
-					foreach ($disabler as $d) {
-						$content .= '  SecRuleRemoveByID '.$d->rules."\n";
-					}
-				}
-				
-				$wrules = $this->datasistem->listdata($filter,'vrules_white',null,null)->result();
-				
-				if (count($wrules) !== null){
-					foreach ($wrules as $w) {
-						$gid = 40000+$w->vrulesw_id;
-						$content .= '  SecRule REMOTE_ADDR "^'.$w->rules.'$" phase:1,log,deny,ctl:ruleEngine=Off,id:'.$gid."\n";
-						
-					}
-				}
-					
-					$content .= "\n".'<Proxy balancer://'.$lbname.'>'."\n";
-					$content .= '  BalancerMember http://'.$serverUrl.':'.$publicPort."\n";
-					
-					
-				
-					$lbhost = $this->listdata($filter,'host',null,null)->result();
-					foreach ($lbhost as $l) {
-						
-						
-					  $content.= '  BalancerMember http://'.$l->ip.':'.$l->port;
-					  $content.= $l->loadfactor == 0 ? '':' loadfactor='.$l->loadfactor;
-					  $content.= empty($l->timeout) ?'':' timeout='.$l->timeout;
-					  $content.= $l->lblset == 0 ? '':' lbset='.$l->lblset;
-					  $content.= empty($l->route) ? '':' route='.$l->route;
-					  $content.= "\n";
-						
-					}	   
-					$content.= '  ProxySet lbmethod='.$item->lbmethod."\n";
-					$content .= '</Proxy>'."\n\n";
-					
-					$content .= '  ProxyPass / balancer://'.$lbname.'/'."\n";
-					$content .= '  ProxyPassReverse /  balancer://'.$lbname.'/'."\n";
-				
-					$content .= '  ServerName '.$publicDomain."\n";
-					$content .= '  ServerAlias www.'.$publicDomain."\n";
-					$content .= '  ServerSignature off'."\n\n";
-					$content .= '</VirtualHost>'."\n\n";
-}
-else {				
-				$content='<VirtualHost *:'.$publicPort.'>'."\n\n";
-				
-				$content .= '  SecRuleEngine '.$modsstatus."\n\n";
-				
-				
-				if ($modssl == "on") {
-					//$content .= '  SSLCipherSuite EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH'."\n";
-					$content .= '  SSLProtocol All -SSLv2 -SSLv3 -TLSv1 -TLSv1.1'."\n";
-					$content .= '  SSLHonorCipherOrder On'."\n";
-					$content .= '  SSLCertificateFile '.$item->SSLCertificateFile."\n";
-					$content .= '  SSLCertificateKeyFile '.$item->SSLCertificateKeyFile."\n";
-					$content .= '  SSLCertificateChainFile '.$item->SSLCertificateChainFile."\n";
-				}
-				$content .= '  Header set X-Content-Type-Options "nosniff"'."\n";
-				$content .= '  RemoteIPHeader X-Forwarded-For'."\n\n";
-				
-				$vrules = $disabler = $this->datasistem->listdata($filter,'vrules',null,null)->result();
-				$disabler = $this->listdata($filter,'vrules_disable',null,null)->result();
-				
-				if (count($vrules) !== null){
-					foreach ($vrules as $v) {
-						$rurl = "/lib/modsecurity.d/base_rules/";
-						$content .= '  include '.$rurl.$v->rules."\n";
-					}
-				}
-				
-				if (count($disabler) !== null){
-					foreach ($disabler as $d) {
-						$content .= '  SecRuleRemoveByID '.$d->rules."\n";
-					}
-				}
-				
-				$wrules = $this->listdata($filter,'vrules_white',null,null)->result();
-				
-				if (count($wrules) !== null){
-					foreach ($wrules as $w) {
-						$gid = 40000+$w->vrulesw_id;
-						$content .= '  SecRule REMOTE_ADDR "^'.$w->rules.'$" phase:1,log,deny,ctl:ruleEngine=Off,id:'.$gid."\n";
-						
-					}
-				}
-				
-				$content .= "\n".'<Proxy *>'."\n";
-				$content .= '  AllowOverride All'."\n";
-				$content .= '  Allow from all'."\n";
-				$content .= '  SetEnv force-proxy-request-1.0 1'."\n";
-				$content .= '  SetEnv proxy-nokeepalive 1'."\n\n";
-				
-				$content .= '</Proxy>'."\n\n";				
-				$content .= '  ProxyPreserveHost On'."\n";
-				$content .= '  ProxyRequests off'."\n";
-				$content .= '  ProxyPass / http://'.$serverUrl.'/'."\n";
-				$content .= '  ProxyPassReverse /  http://'.$serverUrl.'/'."\n";
-				
-				$content .= '  ServerName '.$publicDomain."\n";
-				$content .= '  ServerAlias www.'.$publicDomain."\n";
-				$content .= '  ServerSignature off'."\n\n";
-				$content .= '</VirtualHost>'."\n\n";
-	}
+				$content='<VirtualHost *:'.$publicPort.'>
+SecRuleEngine '.$modsstatus.'
+RemoteIPHeader X-Forwarded-For
+<Proxy *>
+        AllowOverride All
+        Allow from all
+        SetEnv force-proxy-request-1.0 1
+        SetEnv proxy-nokeepalive 1
+
+    </Proxy>				
+	ProxyPreserveHost On
+	ProxyRequests off
+	ProxyPass / http://'.$serverUrl.'/
+	ProxyPassReverse /  http://'.$serverUrl.'/
+
+	ServerName '.$publicDomain.'
+	ServerAlias www.'.$publicDomain.'
+	ServerSignature off
+</VirtualHost>'."\n\n";
+
 				$contentHostFile.=$content;
 
-}
+                        }
 			
 			if ( !write_file('/etc/httpd/conf.d/host.conf', $contentHostFile)){
 		    return 'Unable to write the file';
 		    }
-			return $contentHostFile;
 	}
 	function write_blacklist(){
 		
@@ -563,20 +427,6 @@ else {
 		if ( !write_file('/lib/modsecurity.d/rimau_rules/modsecurity_crs_10_own_rules.conf', $data)){
 		     return 'Unable to write the file';
 		}
-	}
-	function adomainrules($serverid){
-		
-		$this->db->select('rules');
-		$this->db->where('serverid',$serverid);
-		$rulesa = $this->db->get('vrules')->result();
-		
-		$p = array();
-		foreach ($rulesa as $r) {
-			$p[] = $r->rules;
-		}
-	
-		
-		return $p;
 	}
 
 }

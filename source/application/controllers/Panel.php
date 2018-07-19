@@ -217,7 +217,7 @@ class Panel extends CI_Controller {
 		);
 		
 		$data2 = array(
-			'server_id' => $this->input->post('id')
+			'serverid' => $this->input->post('id')
 		);
 		
 		$this->datasistem->remove($data,'server');
@@ -245,7 +245,62 @@ class Panel extends CI_Controller {
 		
 		//$maklumat['server'] = $this->datasistem->listdata($data,'host',null,null)->result_array();
 		$maklumat['id'] = $this->input->post('id');
- 		$this->load->view('panel/model/edit_server_lb',$maklumat);
+ 		$this->load->view('panel/model/add_server_lb',$maklumat);
+		
+	}
+	function newlbhost(){
+			
+		$data = array(
+			'serverid' => $this->input->post('serverid'),
+			'name'  => $this->input->post('name'),
+			'ip' => $this->input->post('ip'),
+			'port' => $this->input->post('port'),
+			'route' => $this->input->post('route'),
+			'loadfactor' => $this->input->post('loadfactor'),
+			'timeout' => $this->input->post('timeout'),
+			'lblset' => $this->input->post('lblset'),
+			'status' => $this->input->post('status')
+		);
+		
+		echo $this->datasistem->save($data,'host');	
+		echo $this->datasistem->write_server();
+	}
+	function editlbhost(){
+		$data = array(
+			'serverid' => $this->input->post('serverid'),
+			'name'  => $this->input->post('name'),
+			'ip' => $this->input->post('ip'),
+			'port' => $this->input->post('port'),
+			'route' => $this->input->post('route'),
+			'loadfactor' => $this->input->post('loadfactor'),
+			'timeout' => $this->input->post('timeout'),
+			'lblset' => $this->input->post('lblset'),
+			'status' => $this->input->post('status')
+		);
+		
+		echo $this->datasistem->edit($this->input->post('id'),'host_id',$data,'host');	
+		echo $this->datasistem->write_server();
+	}
+	function padamserverlb(){
+		
+		$data2 = array(
+			'host_id' => $this->input->post('id')
+		);
+		
+		$this->datasistem->remove($data2,'host');
+		echo $this->datasistem->write_server();
+		
+	}
+	function editserverlb(){
+		
+		$data = array(
+			'host_id' => $this->input->post('id')
+		);	
+		
+		$maklumat['host'] = $this->datasistem->listdata($data,'host',null,null)->result_array();
+		
+		
+		$this->load->view('panel/model/edit_server_lb',$maklumat);
 		
 	}
 	function confserver(){
@@ -265,12 +320,34 @@ class Panel extends CI_Controller {
 		$data = array(
 			'id' => $this->input->post('id')
 		);	
-		
+		$maklumat['mytab'] = $this->input->post('stab');
 		$maklumat['server'] = $this->datasistem->listdata($data,'server',null,null)->result_array();
 		$datah = array(
-			'server_id' => $this->input->post('id')
+			'serverid' => $this->input->post('id')
 		);	
 		$maklumat['list'] = $this->datasistem->listdata($datah,'host',null,null)->result();
+		
+
+		$maklumat['activatedRules'] = $this->datasistem->adomainrules($this->input->post('id'));
+		$maklumat['listid'] = $this->datasistem->listdata($datah,'vrules_disable',null,null)->result();
+		$maklumat['blacklist'] = $this->datasistem->listdata($datah,'vrules_black',null,null)->result();
+		$maklumat['whitelist'] = $this->datasistem->listdata($datah,'vrules_white',null,null)->result();
+		
+		$dir='/usr/lib/modsecurity.d/base_rules';
+		$files=array_diff(scandir($dir),Array(".",".."));
+		$maklumat['baseRules']=preg_grep("/^(.+)\.conf$/", $files);
+		
+		/*
+		$dir='/etc/httpd/modsecurity.d';
+		$files=array_diff(scandir($dir),Array(".",".."));
+		$maklumat['anomalyProtocol']=preg_grep("/^(.+)\.conf$/", $files);
+	
+	
+        $dir='/usr/lib/modsecurity.d/comodo';
+		$files=array_diff(scandir($dir),Array(".",".."));
+		$maklumat['comodoRules']=preg_grep("/^(.+)\.conf$/", $files);
+		*/
+		
 		
 		$this->load->view('panel/model/edit_server_advance',$maklumat);
 		
@@ -285,6 +362,56 @@ class Panel extends CI_Controller {
 			//'SSLEngine' =>$this->input->post('SSLEngine')
 		);
 		$this->datasistem->edit($this->input->post('id'),'id',$simpan,'server');
+		echo $this->datasistem->write_server();
+	}
+	function pilihssl(){
+		
+		$simpan = array(
+			
+			'SSLEngine' =>$this->input->post('SSLEngine')
+		);	
+		$this->datasistem->edit($this->input->post('serverid'),'id',$simpan,'server');
+		
+		echo $this->datasistem->write_server();
+	}
+	function pilihmod(){
+		$simpan = array(
+
+                        'modsec' =>$this->input->post('modsec')
+                );
+                $this->datasistem->edit($this->input->post('serverid'),'id',$simpan,'server');
+
+                echo $this->datasistem->write_server();
+	}
+	function pilihlb(){
+		
+		$simpan = array(
+			
+			'lb' =>$this->input->post('lb')
+		);	
+		$this->datasistem->edit($this->input->post('serverid'),'id',$simpan,'server');
+		
+		echo $this->datasistem->write_server();
+	}
+	function lbmethod(){
+		$simpan = array(
+			
+			'lbmethod' =>$this->input->post('lbmethod')
+		);	
+		$this->datasistem->edit($this->input->post('serverid'),'id',$simpan,'server');
+		
+		echo $this->datasistem->write_server();
+	}
+	function editserversimpanssl(){
+		
+		$simpan = array(
+			
+			'SSLCertificateFile' => $this->input->post('SSLCertificateFile'),
+			'SSLCertificateKeyFile' => $this->input->post('SSLCertificateKeyFile'),
+			'SSLCertificateChainFile' => $this->input->post('SSLCertificateChainFile')
+		);
+		echo $this->datasistem->edit($this->input->post('serverid'),'id',$simpan,'server');
+		
 		echo $this->datasistem->write_server();
 	}
 	public function ubahpassword(){
@@ -364,6 +491,41 @@ class Panel extends CI_Controller {
 			$maklumat['rules'] = $this->datasistem->listdata($data,'tblid_added',null,null)->result_array();
 			
 			$this->load->view('panel/model/edit_rules_disable',$maklumat);
+		}
+
+	}
+	function editvrules(){
+		
+		
+		if ($this->input->post('jenis') == 1){
+			
+			$data = array(
+				'vrulesd_id' => $this->input->post('id')
+			);	
+			$maklumat['rules'] = $this->datasistem->listdata($data,'vrules_disable',null,null)->result_array();
+			$maklumat['tajuk'] = "Disable Rules";
+			$this->load->view('panel/model/edit_vrules',$maklumat);
+			
+		}
+		else if ($this->input->post('jenis') == 2){
+			
+			$data = array(
+				'vrulesb_id' => $this->input->post('id')
+			);	
+			
+			$maklumat['rules'] = $this->datasistem->listdata($data,'vrules_black',null,null)->result_array();
+			$maklumat['tajuk'] = "Black List IP/DOMAIN";
+			$this->load->view('panel/model/edit_vrules',$maklumat);
+		}
+		else if ($this->input->post('jenis') == 3){
+			
+			$data = array(
+				'vrulesw_id' => $this->input->post('id')
+			);	
+			
+			$maklumat['rules'] = $this->datasistem->listdata($data,'vrules_white',null,null)->result_array();
+			$maklumat['tajuk'] = "White List IP/DOMAIN";
+			$this->load->view('panel/model/edit_vrules',$maklumat);
 		}
 
 	}
@@ -529,6 +691,11 @@ class Panel extends CI_Controller {
 			
 			$this->datasistem->edit($this->input->post('id'),'rid',$simpan,'ownrules');
 			echo $this->datasistem->write_ownlist();
+		}
+		function viewcfg(){
+			echo "<pre>";
+			echo $this->datasistem->write_server();
+			echo "</pre>";
 		}
 
 }

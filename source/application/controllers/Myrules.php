@@ -19,265 +19,7 @@ class Myrules extends CI_Controller {
 			redirect('../../','refresh');
 		} 
     }
-	function pro_secruleremovebyid(){		
-		//rules id
-		$rules_id = $this->input->post('id');
-		
-		$data = array(
-			
-			'rules_id' => $rules_id
-		
-		);
-		
-		$ru = $this->datasistem->listdata($data,'tblid_list',null,null)->row();
-			
-		
-		$id = $ru->id;
-		$rules_id = $ru->rules_id;
-		$codes = $ru->codes;
-		
-		$id = htmlspecialchars($ru->id,ENT_QUOTES);
-		$rules_id = htmlspecialchars($ru->rules_id,ENT_QUOTES);
-		
-			if (isset($rules_id)){
-			
-			$simpan = array(
-				'id' => $id,
-				'rules_id' => $rules_id,
-				'codes' => $codes
-			);
-			
-			echo $this->datasistem->save($simpan,'tblid_added');
-		}
-		
-		
-	}
-	function pro_secruleremovebyidactivate(){
-		
-		//ambil data dari butang kemaskini
-		$id = $this->input->post('id');
 	
-		//simpan data dalam table tblid_added
-		//$query = "update tblid_added set status ='A' where id = '$id'";
-		
-		$update = array(
-			'status' => 'A'
-		);
-		
-		$this->datasistem->edit($id,'id',$update,'tblid_added');
-		
-		$update = array(
-			'status' => 'A'
-		);
-			
-		
-		$this->datasistem->write_crules($update);
-		
-	}
-	function pro_secruleremovebyiddelete(){
-		
-		$id =  $this->input->post('id');
-
-		//delete data dalam table tblid_added
-		$padam = array(
-			'id' => $id
-		);
-		$this->datasistem->remove($padam ,'tblid_added');
-			
-		}
-	function pro_secruleremovebyidremove(){
-
-		$id = $this->input->post('id');
-
-		//deactivate data dalam table tblid_added
-		
-		$update = array(
-			'status' => 'TA'
-		);
-		
-		$this->datasistem->edit($id,'id',$update,'tblid_added');
-				
-		$this->datasistem->write_crules($update);
-		
-	}
-	function pro_secruleremovebymsg(){
-			
-		echo $this->input->post('id');
-		
-		$msg = $this->input->post('id');
-	
-	
-		$data = array(
-			'msg' => $msg
-		);
-		
-		$qr = $this->datasistem->listdata($data,'tblmsg_list',null,null)->result();
-		
-		while($row = mysql_fetch_array($comments, MYSQL_ASSOC))
-		foreach ($qr as $q) 
-		{
-	        $id = $q->id;
-			$msg = $q->msg;
-			$codes = $q->codes;
-			
-			$id = htmlspecialchars($q->id,ENT_QUOTES);
-			
-			$simpan = array(
-				'id' => $id,
-				'msg' => $msg,
-				'codes' => $codes
-			);
-			
-			$this->datasistem->save($simpan,'tblmsg_added');
-			
-		}
-		
-	}
-	function pro_secruleremovebymsgactivate(){
-			
-		echo $this->input->post('id');
-		$id = $this->input->post('id');
-
-		//simpan data dalam table tblmsg_added		
-		$simpan = array(
-			'status' => 'A'
-		);
-		
-		$this->datasistem->edit($id,'id',$simpan,'tblmsg_added');
-	
-	    $update = array(
-			'status' => 'A'
-		);
-			
-		
-		$this->datasistem->write_crules($update);
-		
-	}
-	function pro_secruleremovebymsgdelete(){
-	
-		$id = $this->input->post('id');
-	
-		//delete data dalam table tblmsg_added
-		$padam = array(
-			'id' => $id
-		);
-		
-		$this->datasistem->remove('tblmsg_added',$padam);
-		
-		
-	}
-	function pro_secruleremovebymsgremove(){
-			
-		$id = $this->input->post('id');
-
-		//deactivate data dalam table tblmsg_added		
-		$simpan = array(
-			'status' => 'TA'
-		);
-		
-		$this->datasistem->edit($id,'id',$simpan,'tblmsg_added');
-		
-		$update = array(
-			'status' => 'A'
-		);
-			
-		
-		$this->datasistem->write_crules($update);
-			
-		
-	}
-	function pro_secruleremovebytag(){
-			
-		
-		$tag = $this->input->post('id');
-	
-
-		
-		$data = array(
-			'id' => $tag
-		);
-		
-		$cr = $this->datasistem->listdata($data,'tbltag_list',null,null)->result();
-		
-		foreach ($cr as $c) 
-		
-		{
-	        $id = $c->id;
-			$tag = $c->tag;
-			$codes = $c->codes;
-			
-			$id = htmlspecialchars($c->id,ENT_QUOTES);
-		
-			$simpan = array(
-				'id' => $id,
-				'tag' => $tag,
-				'codes' => $codes
-			);
-			
-			$this->datasistem->save($simpan,'tbltag_added');
-			
-		}
-
-		
-		
-	}
-	function pro_secruleremovebytagactivate(){
-			
-
-		$id = $this->input->post('id');
-
-		//simpan data dalam table tbltag_added
-
-		$simpan = array(
-			'status' => 'A'
-		);
-		
-		$this->datasistem->edit($id,'id',$simpan,'tbltag_added');
-		
-		
-		$update = array(
-			'status' => 'A'
-		);
-			
-		
-		$this->datasistem->write_crules($update);
-		
-	}
-	function pro_secruleremovebytagdelete(){
-
-		$id = $this->input->post('id');
-
-		//delete data dalam table tbltag_added
-		$padam = array (
-			'id' => $id
-		);
-		
-		$this->datasistem->remove($padam,'tbltag_added');		
-		
-	}
-	function pro_secruleremovebytagremove(){
-
-		$id = $this->input->post('id');
-
-		//deactivate data dalam table tbltag_added
-	
-		$simpan = array(
-			'status' => 'TA'
-		);
-		
-		$this->datasistem->edit($id,'id',$simpan,'tbltag_added');
-		
-		
-			
-	    $update = array(
-			'status' => 'A'
-		);
-			
-		
-		$this->datasistem->write_crules($update);
-		
-		
-	}
 	function blacklist(){
 			
 		$simpan = array(
@@ -316,6 +58,107 @@ class Myrules extends CI_Controller {
 		$this->datasistem->write_disablelist();
 		
 	}
+	function addrules(){
+		$jenis = $this->input->post('type');	
+		if ($jenis == 1) {
+				
+			//disable rules
+			
+			$simpan = array(
+			'rules' => $this->input->post('url'),
+			'serverid' => $this->input->post('id')
+			);
+			
+			echo $this->datasistem->save($simpan,'vrules_disable');
+		}
+		if ($jenis == 2) {
+			//black list ip/host
+			$simpan = array(
+			'rules' => $this->input->post('url'),
+			'serverid' => $this->input->post('id')
+			);
+			
+			
+			echo $this->datasistem->save($simpan,'vrules_black');
+			
+		}
+		if ($jenis == 3) {
+			//white list ip/hosts
+			$simpan = array(
+			'rules' => $this->input->post('url'),
+			'serverid' => $this->input->post('id')
+			);
+			
+			
+			echo $this->datasistem->save($simpan,'vrules_white');
+		}
+		echo $this->datasistem->write_server();
+	}
+	function padamrules(){
+		$jenis = $this->input->post('type');	
+		if ($jenis == 1) {
+				
+			//disable rules
+
+			$padam = array(
+				'vrulesd_id' => $this->input->post('id')
+			);
+			echo $this->datasistem->remove($padam,'vrules_disable');
+		}
+		if ($jenis == 2) {
+			//black list ip/host
+			$padam = array(
+				'vrulesb_id' => $this->input->post('id')
+			);
+			
+			
+			echo $this->datasistem->remove($padam,'vrules_black');
+			
+		}
+		if ($jenis == 3) {
+			//white list ip/hosts
+			$padam = array(
+				'vrulesw_id' => $this->input->post('id')
+			);
+			
+			
+			echo $this->datasistem->remove($padam,'vrules_white');
+		}
+		echo $this->datasistem->write_server();
+	}
+	function editvrules(){
+		$jenis = $this->input->post('type');	
+		if ($jenis == 1) {
+				
+			//disable rules
+
+			$data = array(
+				'rules' => $this->input->post('rules')
+			);
+			$this->datasistem->edit($this->input->post('id'),'vrulesd_id',$data,'vrules_disable');
+			//echo $this->datasistem->remove($padam,'vrules_disable');
+		}
+		if ($jenis == 2) {
+			//black list ip/host
+			$data = array(
+				'rules' => $this->input->post('rules')
+			);
+			$this->datasistem->edit($this->input->post('id'),'vrulesb_id',$data,'vrules_black');
+			
+			//echo $this->datasistem->remove($padam,'vrules_black');
+			
+		}
+		if ($jenis == 3) {
+			//white list ip/hosts
+			$data = array(
+				'rules' => $this->input->post('rules')
+			);
+			
+			$this->datasistem->edit($this->input->post('id'),'vrulesw_id',$data,'vrules_white');
+			//echo $this->datasistem->remove($padam,'vrules_white');
+		}
+		echo $this->datasistem->write_server();
+	}
 	function create_white(){
 			
 		echo $this->datasistem->write_whitelist();
@@ -347,6 +190,36 @@ class Myrules extends CI_Controller {
 		
 		$this->datasistem->write_ownlist();
 		
+	}
+	function domainrules(){
+		
+		
+			
+		$data = array(
+			'rules' => $this->input->post('rules'),
+			'serverid' => $this->input->post('id')
+		);
+		
+		
+		$filter = array(
+					  'rules' => $this->input->post('rules'),
+					  'serverid' => $this->input->post('id')
+		);
+		$check = $disabler = $this->datasistem->listdata($filter,'vrules',null,null)->result();	
+		
+		
+		if (count($check) == null){	
+			$this->datasistem->save($data,'vrules');
+			echo $this->datasistem->write_server();
+		}
+		else{
+			if ($this->input->post('status') == 1){
+				$this->datasistem->remove($data,'vrules');
+			}
+			else { 
+				echo "found";
+			}
+		} 
 	}
 }
 	

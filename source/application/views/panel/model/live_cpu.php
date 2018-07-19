@@ -103,11 +103,11 @@ else{
 
 <div class="col-sm-12">	
 	<div class="col-sm-6">
-		<img src="/mrtg/localhost_ens18-day.png" />
+		<img src="/mrtg/127.0.0.1_eth0-day.png" />
 	</div>
 	
 	<div class="col-sm-6">
-		<img src="/mrtg/localhost_ens18-week.png" />
+		<img src="/mrtg/127.0.0.1_eth0-week.png" />
 	</div>
 
 </div>

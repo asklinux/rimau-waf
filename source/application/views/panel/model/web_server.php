@@ -48,21 +48,9 @@
 
 	</div>
 	
-	<div class="form-group">
-	 	<label for="lb">	Load Balancer </label>
-	 	<select id="lb">
-	 	<option value="0">No</option> 
-  		<option value="1">Yes</option>
-	</select>
-	 </div>	
 	
-	<div class="form-group" id="lbtype" style='display:none'>
-	 	<label for="lbmethod">	lbmethod </label>
-	 	<select id="lbmethod">
-  		<option value="bytraffic">bytraffic</option>
-  		<option value="byrequests">byrequests</option> 
-	</select>
-	 </div>	
+	
+
 	 
 	</div>	 
 	 
@@ -78,13 +66,7 @@
 			}
 		});
 		
-		$("#lb").change(function(){
-			if($(this).val() === '1'){
-			  $("#lbtype").slideDown('show');
-			}else{
-			  $("#lbtype").slideUp('hide');
-			}
-		});
+		
 	</script>
 	</div>
 	<hr />
@@ -169,9 +151,9 @@ $("#addserver").click(function(){
 	}
 	else {
 	var addserver = {
-		host:$("#hosts").val(),
-		port:$("#port").val(),
-		maklumat:$("#maklumat").val(),
+		host:$("#hosts").val().trim(),
+		port:$("#port").val().trim(),
+		maklumat:$("#maklumat").val().trim(),
 		SSLCertificateFile:$("#SSLCertificateFile").val(),
 		SSLCertificateKeyFile:$("#SSLCertificateKeyFile").val(),
 		SSLCertificateChainFile:$("#SSLCertificateChainFile").val(),
@@ -244,6 +226,6 @@ function saveedit(){
 $(document).ready(function() {
     clearTimeout(lari);
     clearTimeout(livelog);
-    break;		
+    //break;		
 });
 </script>

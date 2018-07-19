@@ -7,7 +7,9 @@
 
 		<meta name="description" content="overview &amp; stats" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-
+		<META NAME="Command-Line" CONTENT="/usr/bin/indexmaker --columns=1 /etc/mrtg/mrtg.cfg" >
+    	<META HTTP-EQUIV="Cache-Control" content="no-cache" >
+    	<META HTTP-EQUIV="Pragma" CONTENT="no-cache" >
 		<!-- bootstrap & fontawesome -->
 		<link rel="stylesheet" href="/asset/assets/css/bootstrap.min.css" />
 		<link rel="stylesheet" href="/asset/assets/font-awesome/4.2.0/css/font-awesome.min.css" />
@@ -208,6 +210,7 @@
 										Tools
 									</a>
 								</li>
+								<!--
 								<li>
 									<a id="updaterules">
 										<i class="ace-icon fa fa-cloud-download"></i>
@@ -232,6 +235,7 @@
 										Set log Server
 									</a>
 								</li>
+								-->
 								<li class="divider"></li>
 
 								<li>
