@@ -14,44 +14,19 @@ This project has been developed for public. The original source code has been ch
 
 ## Installation
 Currently installation only on  Centos 7. Package RPM can be uploaded to the installation process
-
-**Manual Installation**
-Log as root user and install all required package via YUM package manager
+Install tunnelbiz repo (repo is down now form maintenance )
 ```
-yum install nginx
-yum install php php-fpm
-yum install sqlite
-yum install httpd
-yum install mod_security
+rpm -ivh http://centos.tunnelbiz.com/tunnelbiz-1.0.0-0.el7.centos.x86_64.rpm
 ```
-Clone repository, move to unix system resources as 'rimauwaf'
+yum update
 ```
-git clone https://github.com/asklinux/rimau-waf.git
-mv rimau-waf /usr/share/rimauwaf
+yum install rimauwaf
 ```
-Navigate to 'rimauwaf' and rename `source` directory as `web`
+restart server/start service
 ```
-cd /usr/share/rimauwaf
-mv source web
+http://ip:9090
 ```
-Run this command below to modify sudoers file
-```
-echo 'Defaults:php-fpm !requiretty' >> /etc/sudoers
-echo "User_Alias WWW_USER2 = php-fpm" >> /etc/sudoers
-echo "Cmnd_Alias WWW_COMMANDS2 = /usr/bin/systemctl,/usr/bin/ln,/usr/bin/unlink,/usr/share/rimauwaf/run.sh,/usr/bin/tail,/usr/bin/sed,/usr/bin/cat,/usr/bin/grep,/usr/sbin/apachectl" >> /etc/sudoers
-echo "WWW_USER2 localhost = (ALL) NOPASSWD:WWW_COMMANDS2" >> /etc/sudoers
-```
-Allow the webserver to  customized SELinux policy as permissive 
-```
-semanage permissive -a httpd_t
-```
-change port and folder to /usr/share/rimauwaf
-```
-vi /etc/nginx/nginx.conf
-```
-Enable nginx to automatically load when booted or restart
-```
-systemctl enable nginx
+user/pass: admin
 ```
 
 ## Tests
