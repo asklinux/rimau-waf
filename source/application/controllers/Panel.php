@@ -8,24 +8,18 @@ class Panel extends CI_Controller {
         parent::__construct();
 		$this->load->helper('url');
  		
-		if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
-				
-			//$this->load->view('block');	
-			
-			//header("Refresh:0");
-			
-		}
-		else{
+		if ((!isset($_SESSION['logged_in']) && !$_SESSION['logged_in'] == true)) {
+
 			redirect('../../','refresh');
-		} 
+		}
+
     }
 	
    
 	
 	function index(){
 			
-		//if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
-			
+
 			$uptimem = exec('uptime');
 			$uptimem = explode(",",$uptimem);
 			$uptime  = $uptimem[0];
@@ -35,10 +29,7 @@ class Panel extends CI_Controller {
 			$this->load->view('panel/header');
 			$this->load->view('panel/main');
 			$this->load->view('footer',$data_f);
-		//}
-		//else{
-		//redirect('/', 'refresh');
-		//}
+
 		
 	}
 	function utama(){
@@ -337,18 +328,6 @@ class Panel extends CI_Controller {
 		$files=array_diff(scandir($dir),Array(".",".."));
 		$maklumat['baseRules']=preg_grep("/^(.+)\.conf$/", $files);
 		
-		/*
-		$dir='/etc/httpd/modsecurity.d';
-		$files=array_diff(scandir($dir),Array(".",".."));
-		$maklumat['anomalyProtocol']=preg_grep("/^(.+)\.conf$/", $files);
-	
-	
-        $dir='/usr/lib/modsecurity.d/comodo';
-		$files=array_diff(scandir($dir),Array(".",".."));
-		$maklumat['comodoRules']=preg_grep("/^(.+)\.conf$/", $files);
-		*/
-		
-		
 		$this->load->view('panel/model/edit_server_advance',$maklumat);
 		
 	}
@@ -427,7 +406,6 @@ class Panel extends CI_Controller {
 		}
 		else {
 			echo 'hoi';
-			//echo $_SESSION['user_id'];
 		}
 		
 	}

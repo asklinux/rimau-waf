@@ -177,7 +177,7 @@
 $(document).ready(function() {
     clearTimeout(lari);
     clearTimeout(livelog);
-    break;		
+    //break;		
 });
 
 $("#waddurl").click(function(){

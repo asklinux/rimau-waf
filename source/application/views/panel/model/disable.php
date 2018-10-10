@@ -86,7 +86,7 @@
 $(document).ready(function() {
     clearTimeout(lari);
     clearTimeout(livelog);
-    break;		
+    //break;		
 });
 
 $("#addidx").click(function(){

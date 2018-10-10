@@ -446,7 +446,11 @@ $config['csrf_cookie_name'] = 'rimauwafssuauas';
 $config['csrf_expire'] = 7200;
 $config['csrf_regenerate'] = TRUE;
 $config['csrf_exclude_uris'] = array(
-    'panel/live_cpu'
+    'panel/[a-z]+',
+    'myrules/[a-z]+',
+    'panel/live_cpu',
+    'panel/actif_rules'
+
 );
 
 /*
