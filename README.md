@@ -14,7 +14,7 @@ This project has been developed for public. The original source code has been ch
 
 ## Installation
 Currently installation only on  Centos 7. Package RPM can be uploaded to the installation process
-Install tunnelbiz repo (repo is down now form maintenance )
+Install tunnelbiz repo
 ```
 rpm -ivh http://centos.tunnelbiz.com/tunnelbiz-1.0.0-0.el7.centos.x86_64.rpm
 ```
