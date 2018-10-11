@@ -232,6 +232,13 @@ Restart</button></center>
 			        $('#dimana').text("Change Password").show();			        
 			        $('#paparx').load(page_url).show();
 	});
+	$("#logserver").click(function(){
+		
+		var page_url='panel/filebeat';
+	 $('#paparx').text('Loading  ...').show();
+	 $('#dimana').text("Change Password").show();			        
+	 $('#paparx').load(page_url).show();
+	});
 </script>
 <script>
 $(document).ready(function() {

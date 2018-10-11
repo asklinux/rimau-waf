@@ -151,6 +151,28 @@ class Datasistem extends CI_Model {
 			return "Failure";
 		}
 	}
+	function change_kibana($server){
+		//sed -i '124 c\ host:test.com:5506' /etc/filebeat/filebeat.yml
+
+		$cmd = "sudo /usr/bin/sed -i '124 c\ \"host: ".escapeshellarg($server)."\"' /etc/filebeat/filebeat.yml";
+
+	}
+	function enable_filebeat(){
+		$cmd = "sudo /usr/bin/systemctl enable filebeat";
+		$cmd2 = "sudo /usr/bin/systemctl start filebeat";
+		shell_exec($cmd);
+		shell_exec($cmd2);
+	}
+	function status_filebeat(){
+		$cmd = "sudo /usr/bin/systemctl status filebeat | grep -e \"Active\"";
+		return shell_exec($cmd);
+	}
+	function disable_filebeat(){
+		$cmd = "sudo /usr/bin/systemctl disable filebeat";
+		$cmd2 = "sudo /usr/bin/systemctl stop filebeat";
+		shell_exec($cmd);
+		shell_exec($cmd2);
+	}
 	function status_mod(){
 			
 		

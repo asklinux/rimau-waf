@@ -675,6 +675,15 @@ class Panel extends CI_Controller {
 			echo $this->datasistem->write_server();
 			echo "</pre>";
 		}
+		function filebeat(){
+			
+			echo $this->datasistem->status_filebeat();
+			
+			$this->load->view('panel/filebeat');
+			
+			
+			
+		}
 
 }
 	

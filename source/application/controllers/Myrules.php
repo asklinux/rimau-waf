@@ -8,16 +8,11 @@ class Myrules extends CI_Controller {
         parent::__construct();
 		$this->load->helper('url');
  		
-		if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
-				
-			//$this->load->view('block');	
-			
-			//header("Refresh:0");
-			
-		}
-		else{
+		if ((!isset($_SESSION['logged_in']) && !$_SESSION['logged_in'] == true)) {
+
 			redirect('../../','refresh');
-		} 
+		}
+
     }
 	
 	function blacklist(){

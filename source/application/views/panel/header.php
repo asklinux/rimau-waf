@@ -229,13 +229,14 @@
 										Update Server
 									</a>
 								</li>
+								-->
 								<li>
 									<a id="logserver">
 										<i class="ace-icon fa  fa-cogs"></i>
-										Set log Server
+										filebeat log
 									</a>
 								</li>
-								-->
+								
 								<li class="divider"></li>
 
 								<li>
