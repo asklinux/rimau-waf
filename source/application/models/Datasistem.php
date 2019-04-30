@@ -63,7 +63,7 @@ class Datasistem extends CI_Model {
 		
 		if($id == "b") {
 			//dir for experimental rules
-			$targetpathexp='/usr/lib/modsecurity.d/experimental_rules/';
+			$targetpathexp='/usr/lib/modsecurity.d/base_rulesv3/';
 			 $target=$targetpathexp.$fail;
 		} 
 
@@ -156,6 +156,16 @@ class Datasistem extends CI_Model {
 
 		$cmd = "sudo /usr/bin/sed -i '124 c\ \"host: ".escapeshellarg($server)."\"' /etc/filebeat/filebeat.yml";
 
+	}
+	function get_kibana_host(){
+		$cmd = "sudo /usr/bin/sed -n 124p  /etc/filebeat/filebeat.yml";
+		$hasil = str_replace("\"","",shell_exec($cmd));
+		return substr($hasil,5);
+	}
+	function get_es_host(){
+		$cmd = "sudo /usr/bin/sed -n 146p  /etc/filebeat/filebeat.yml";
+		$hasil = str_replace("\"","",shell_exec($cmd));
+		return substr(str_replace(str_split('[]'),"",$hasil),8);
 	}
 	function enable_filebeat(){
 		$cmd = "sudo /usr/bin/systemctl enable filebeat";
@@ -312,9 +322,10 @@ if ($item->lb == 1){
 				$disabler = $this->datasistem->listdata($filter,'vrules_disable',null,null)->result();
 				
 				if (count($vrules) !== null){
+					$content .= '  Include /etc/httpd/modsecurity.d/modsecurity_crs_10_config.conf'."\n";
 					foreach ($vrules as $v) {
 						$rurl = "/lib/modsecurity.d/base_rules/";
-						$content .= '  include '.$rurl.$v->rules."\n";
+						$content .= '  IncludeOptional '.$rurl.$v->rules."\n";
 					}
 				}
 				if (count($disabler) !== null){
@@ -382,9 +393,10 @@ else {
 				$disabler = $this->listdata($filter,'vrules_disable',null,null)->result();
 				
 				if (count($vrules) !== null){
+					$content .= '  Include /etc/httpd/modsecurity.d/modsecurity_crs_10_config.conf'."\n";
 					foreach ($vrules as $v) {
 						$rurl = "/lib/modsecurity.d/base_rules/";
-						$content .= '  include '.$rurl.$v->rules."\n";
+						$content .= '  IncludeOptional '.$rurl.$v->rules."\n";
 					}
 				}
 				

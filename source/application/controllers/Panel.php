@@ -61,7 +61,7 @@ class Panel extends CI_Controller {
 		$files=array_diff(scandir($dir),Array(".",".."));
 		$data['baseRules']=preg_grep("/^(.+)\.conf$/", $files);
 		
-		$dir='/usr/lib/modsecurity.d/experimental_rules';
+		$dir='/usr/lib/modsecurity.d/base_rulesv3';
 		$files=array_diff(scandir($dir),Array(".",".."));
 		$data['experimentalRules']=preg_grep("/^(.+)\.conf$/", $files);
 		
@@ -677,12 +677,24 @@ class Panel extends CI_Controller {
 		}
 		function filebeat(){
 			
-			echo $this->datasistem->status_filebeat();
+			$data['status'] = $this->datasistem->status_filebeat();
+			$data['kabana'] = $this->datasistem->get_kibana_host();
+			$data['es'] = $this->datasistem->get_es_host();
+			$this->load->view('panel/filebeat',$data);
 			
-			$this->load->view('panel/filebeat');
 			
 			
-			
+		}
+		function fbstat(){
+			if ($this->input->post('stat') == 0){
+				$this->datasistem->disable_filebeat();
+			}
+			else if($this->input->post('stat') == 1){
+				$this->datasistem->enable_filebeat();
+			}
+			else{
+				echo 'xxx';
+			}
 		}
 
 }
