@@ -1,6 +1,6 @@
 ## Rimau Waf Version 4.0.0  
 
-The purpose of this project is to develops a user interface for **ModSecurity**. Currently this project using Apache and Nginx as a backbone. 
+The purpose of this project is to develop a user interface for **ModSecurity**. Currently this project using Apache and Nginx as a backbone. 
 
 ![Screenshot](docs/img/login.png)
 
