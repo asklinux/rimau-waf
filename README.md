@@ -7,7 +7,7 @@ The purpose of this project is to develop a user interface for **ModSecurity**. 
 ![Screenshot](docs/img/panel.png)
 
 ## Code development
-These systems has been developed using **Codeigniter Framework** as well as SQLite3 as a database. **Bootstrap** has been choosen to make the interface intuitive and responsive design.
+This platform has been developed using **Codeigniter Framework** with SQLite3 as a database. **Bootstrap** has been choosen to make the interface intuitive and responsive design.
 
 ## Motivation
 This project has been developed for public. The original source code has been changed to support the development of Open Source frameworks. The coodes are comply with the GPL V2 license.
